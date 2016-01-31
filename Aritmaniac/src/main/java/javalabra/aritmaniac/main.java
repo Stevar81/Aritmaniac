@@ -1,21 +1,37 @@
 package javalabra.aritmaniac;
 
 import java.util.Scanner;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class main {
+    
+    static int points = 0;
+    static boolean time = true;
 
     public static void main(String[] args) {
 
         Scanner reader = new Scanner(System.in);
 
-        int points = 0;
+        
         int level = 1;
         int result = 0;
         int counter = 0;
-
-        while (true) {
+        
+        Timer timer = new Timer();
+        
+        timer.schedule( new TimerTask(){
+            public void run() {
+                time = false;
+                end();
+            }
+        }, 120000 );
+        
+        
+        while (time) {
+            
             Calculation calculation = new Calculation(level);
-
+            
             int first = calculation.getFirst();
             int second = calculation.getSecond();
             char operator = calculation.getOperator();
@@ -26,7 +42,8 @@ public class main {
             }
 
             System.out.println(first + " " + operator + " " + second);
-            int answer = reader.nextInt();
+            
+            int answer = reader.nextInt();   
 
             if (operator == '+') {
                 result = first + second;
@@ -42,17 +59,23 @@ public class main {
                 points = points + level;
                 System.out.println("Yeah!");
                 counter++;
-                if (counter % 10 == 0) {
+                if (counter % 10 == 0 && level < 5) {
                     level++;
                     System.out.println("Level " + level);
                 }
             } else {
                 System.out.println("Wrong! :(");
-                System.out.println("Points: " + points);
-                break;
+                end();
             }
 
         }
+        
+        
     }
-
+    
+    public static void end() {
+        System.out.println("Game over!\nYou got " + points + " points!");
+        System.exit(0);
+    }
+ 
 }
