@@ -1,3 +1,4 @@
-fi\kallava\tasks\main.class
-fi\kallava\tasks\Operator.class
-fi\kallava\tasks\Calculation.class
+aritmaniac\logic\Main.class
+aritmaniac\logic\Calculation.class
+aritmaniac\logic\Main$1.class
+aritmaniac\logic\Operator.class
