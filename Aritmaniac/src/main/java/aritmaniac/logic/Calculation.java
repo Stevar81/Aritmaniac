@@ -1,5 +1,5 @@
 
-package javalabra.aritmaniac;
+package aritmaniac.logic;
 
 public class Calculation {
     

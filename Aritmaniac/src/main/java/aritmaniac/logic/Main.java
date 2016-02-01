@@ -1,10 +1,10 @@
-package javalabra.aritmaniac;
+package aritmaniac.logic;
 
 import java.util.Scanner;
 import java.util.Timer;
 import java.util.TimerTask;
 
-public class main {
+public class Main {
     
     static int points = 0;
     static boolean time = true;
@@ -65,7 +65,15 @@ public class main {
                 }
             } else {
                 System.out.println("Wrong! :(");
-                end();
+                
+                if (!(counter % 10 == 0)) {
+                   counter--; 
+                }
+                
+                points -= 2;
+                if (points < 0) {
+                    points = 0;
+                }
             }
 
         }
@@ -79,3 +87,4 @@ public class main {
     }
  
 }
+
