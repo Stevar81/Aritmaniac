@@ -1,6 +1,6 @@
 
 package aritmaniac.gui;
 
-public class Canvas {
+public class Interface {
     
 }
