@@ -1,5 +1,5 @@
 
-package aritmaniac.logic;
+package logic;
 
 public class Operator {
     
@@ -56,7 +56,6 @@ public class Operator {
         }
         if (level == 5) {
             operatorNumb = (int)(Math.random() * 2);
-            System.out.println(operatorNumb);
             if (operatorNumb == 0) {
                 operator = '*';
             } else {

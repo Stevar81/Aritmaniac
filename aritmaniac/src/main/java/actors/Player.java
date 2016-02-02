@@ -1,5 +1,5 @@
 
-package aritmaniac.actors;
+package actors;
 
 public class Player {
     
