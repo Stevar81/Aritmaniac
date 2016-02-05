@@ -50,10 +50,16 @@
                     <targetClasses>
                         <param>aritmaniac.logic.*</param>
                         <param>aritmaniac.gui.*</param>
+                        <param>aritmaniac.graphics.*</param>
+                        <param>aritmaniac.actors.*</param>
+                        <param>aritmaniac.listeners.*</param>
                     </targetClasses>
                     <targetTests>
                         <param>aritmaniac.logic.*</param>
                         <param>aritmaniac.gui.*</param>
+                        <param>aritmaniac.graphics.*</param>
+                        <param>aritmaniac.actors.*</param>
+                        <param>aritmaniac.listeners.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

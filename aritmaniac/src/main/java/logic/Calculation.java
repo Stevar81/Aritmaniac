@@ -35,9 +35,19 @@ public class Calculation {
             }
         }
         
-        if (this.oper == '*') {
+        if (this.oper == '·') {
             this.firstNumber = (int)(Math.random()*(this.level * 10));
             this.secondNumber = (int)(Math.random()*(this.level * 10));
+        }
+        
+        if (this.oper == '-') {
+            int temp = 0;
+            
+            if (this.firstNumber < this.secondNumber) {
+                temp = this.firstNumber;
+                this.firstNumber = this.secondNumber;
+                this.secondNumber = temp;
+            }
         }
     }
     

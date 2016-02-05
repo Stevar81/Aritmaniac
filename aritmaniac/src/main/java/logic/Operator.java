@@ -27,7 +27,7 @@ public class Operator {
             } else if (operatorNumb == 3 || operatorNumb == 4 || operatorNumb == 5) {
                 operator = '-';
             } else {
-                operator = '*';
+                operator = '·';
             }
         }
         if (level == 3) {
@@ -37,7 +37,7 @@ public class Operator {
             } else if (operatorNumb == 2 || operatorNumb == 3) {
                 operator = '-';
             } else if (operatorNumb == 4 || operatorNumb == 5 || operatorNumb == 6) {
-                operator = '*';
+                operator = '·';
             } else {
                 operator = '/';
             }
@@ -49,7 +49,7 @@ public class Operator {
             } else if (operatorNumb == 1) {
                 operator = '-';
             } else if (operatorNumb == 2 || operatorNumb == 3 || operatorNumb == 4 || operatorNumb == 5) {
-                operator = '*';
+                operator = '·';
             } else {
                 operator = '/';
             }
@@ -57,7 +57,7 @@ public class Operator {
         if (level == 5) {
             operatorNumb = (int)(Math.random() * 2);
             if (operatorNumb == 0) {
-                operator = '*';
+                operator = '·';
             } else {
                 operator = '/';
             }

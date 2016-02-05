@@ -1,86 +1,69 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package gui;
 
-import logic.Calculation;
-import java.util.Scanner;
-import java.util.Timer;
-import java.util.TimerTask;
+import graphics.EndGraphics;
+import graphics.GameGraphics;
+import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
+import javax.swing.Timer;
+import javax.swing.WindowConstants;
+import listeners.GameListener;
+import listeners.MenuListener;
+import listeners.TimerListener;
 import logic.Calculation;
+import logic.Game;
 
-public class Start {
+/**
+ *
+ * @author Tomi
+ */
+public class Start implements Runnable {
     
-    static int points = 0;
-    static boolean time = true;
-
-    public static void main(String[] args) {
-        
-        JFrame frame = new JFrame("Aritmaniac");
-        frame.setSize(600, 400);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        frame.setVisible(true);
-        
-        JPanel panel1 = new JPanel();        
-        frame.add(panel1);  
-        JLabel label1 = new JLabel("");
-        panel1.add(label1);
-
-        Scanner reader = new Scanner(System.in);
-        
-        int level = 1;
-        int counter = 0;
-        
-        
-        Timer timer = new Timer();
-        
-        timer.schedule (new TimerTask(){
-
-            @Override
-            public void run() {
-                time = false;
-                end();
-            }
-        }, 120000 );
-        
-        while (time) {
+    private JFrame frame;
+    private Game game;
+    
+    public Start(JFrame frame){
+        this.frame = frame;
+        this.game = new Game();
+    }
+    
+    @Override
+    public void run() {
+        try {
+            GameGraphics start = new GameGraphics(game);
+            frame.getContentPane().add(start);
             
-            Calculation calculation = new Calculation(level);
+            frame.pack();
+            frame.setVisible(true);
             
-            label1.setText(calculation.toString());
-            
-            int answer = reader.nextInt();   
-
-            if (calculation.getResult() == answer) {
-                points = points + level;
-                System.out.println("Yeah!");
-                counter++;
-                if (counter % 3 == 0 && level < 5) {
-                    level++;
-                    System.out.println("Level " + level);
-                }
-            } else {
-                System.out.println("Wrong! :(");
-                
-                if (!(counter % 3 == 0)) {
-                   counter--; 
-                }
-                
-                points -= 2;
-                if (points < 0) {
-                    points = 0;
-                }
+            for (KeyListener kl : frame.getKeyListeners()) {
+                frame.removeKeyListener(kl);
             }
 
+            frame.addKeyListener(new GameListener(start, game));
+            
+            start(game, start, frame);
+            
+        } catch (IOException ex) {
+            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
-        
     }
     
-    public static void end() {
-        System.out.println("Game over!\nYou got " + points + " points!");
-        System.exit(0);
-    }
- 
-}
+     public void start(Game game, GameGraphics gg, JFrame frame) throws IOException {        
+        new Timer(1000, new TimerListener(frame, gg, game)).start();
+     }
+     
 
+}
