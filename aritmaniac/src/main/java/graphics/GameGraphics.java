@@ -5,19 +5,16 @@
  */
 package graphics;
 
-import gui.Menu;
-import java.awt.Color;
 import static java.awt.Color.white;
 import java.awt.Font;
+import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
-import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
-import logic.Calculation;
 import logic.Game;
 
 /**
@@ -29,12 +26,26 @@ public class GameGraphics extends JPanel {
         private Image backgroundImage; 
         private String answer;
         private Game game;
+        private Font f;
+        private Font f2;
 
-
-    public GameGraphics(Game game) throws IOException {
+    /**
+     *
+     * @param game
+     * @throws IOException
+     * @throws FontFormatException
+     */
+    public GameGraphics(Game game) throws IOException, FontFormatException {
         this.game = game;
         this.answer = "";
-        backgroundImage = ImageIO.read(new File("C:\\Users\\Tomi\\Desktop\\aritmaniac\\aritmaniac\\src\\main\\java\\graphics\\blackboard.jpg"));
+        
+        String PicBasePath = new File("src\\main\\java\\graphics\\blackboard.jpg").getAbsolutePath();
+        String fontBasePath = new File("src\\main\\java\\graphics\\ColoredCrayons.ttf").getAbsolutePath();
+        
+        f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 50);
+        f2 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 30);
+        
+        backgroundImage = ImageIO.read(new File(PicBasePath));
     }
     
     @Override
@@ -42,22 +53,28 @@ public class GameGraphics extends JPanel {
         super.paintComponent(graphics);
         graphics.drawImage(backgroundImage, 0, 0, 800, 500, this);
         graphics.setColor(white);
-        graphics.setFont(new Font("Serif.italic", Font.PLAIN, 60));
-        graphics.drawString(game.getCalc(), 150, 220);
-        graphics.drawString(answer, 550, 220);
-        graphics.setFont(new Font("Serif.italic", Font.PLAIN, 30));
+        graphics.setFont(f);
+        graphics.drawString(game.getCalc(), 350, 270);
+        graphics.drawString(answer, 580, 270);
+        graphics.setFont(f2);
         graphics.drawString("Points: " + game.getPoints(), 150, 420);
-        graphics.drawString("Level: " + game.getLevel(), 350, 420);
-        graphics.setFont(new Font("Serif.italic", Font.PLAIN, 15));
-        graphics.drawString(game.getCounter(), 500, 420);
-        graphics.setFont(new Font("Serif.italic", Font.PLAIN, 30));
-        graphics.drawString(game.getTimeString(), 350, 120);
+        graphics.drawString("Level: " + game.getLevel(), 550, 420);
+        graphics.drawString(game.getTimeString(), 350, 140);
     }
     
+    /**
+     *
+     * @param ans
+     */
     public void refreshAnswer(String ans) {
         this.answer = ans;
     }
     
+    /**
+     *
+     * @param game
+     * @throws IOException
+     */
     public void refreshGame(Game game) throws IOException {
         this.game = game;
         repaint();

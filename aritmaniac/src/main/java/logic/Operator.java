@@ -1,17 +1,23 @@
 
 package logic;
 
+/**
+ *
+ * @author Tomi
+ */
 public class Operator {
     
     private int level;
     private int operatorNumb;
     private char operator;
     
+    /**
+     *
+     * @param level
+     */
     public Operator(int level) {
         this.level = level;
-    }
-    
-    public char getOperator() {
+        
         if (level == 1) {
             operatorNumb = (int)(Math.random() * 2);
             if (operatorNumb == 0) {
@@ -63,6 +69,14 @@ public class Operator {
             }
             
         }
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public char getOperator() {
+        
         
         
         return operator;

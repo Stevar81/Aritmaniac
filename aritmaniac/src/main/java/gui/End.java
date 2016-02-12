@@ -1,25 +1,33 @@
 package gui;
 
 import graphics.EndGraphics;
-import graphics.MenuGraphics;
 import java.awt.Container;
 import java.awt.Dimension;
+import java.awt.FontFormatException;
 import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
 import listeners.EndListener;
-import listeners.MenuListener;
 import logic.Game;
 
+/**
+ *
+ * @author Tomi
+ */
 public class End implements Runnable{
 
     private JFrame frame;
     private Game game;
     
+    /**
+     *
+     * @param frame
+     * @param game
+     * @throws IOException
+     */
     public End(JFrame frame, Game game) throws IOException{
         this.game = game;
         this.frame = frame;
@@ -33,23 +41,27 @@ public class End implements Runnable{
             addComponents(frame.getContentPane());
         } catch (IOException ex) {
             Logger.getLogger(End.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(End.class.getName()).log(Level.SEVERE, null, ex);
         }
         frame.pack();
         frame.setVisible(true);
     }
     
-    public void addComponents(Container container) throws IOException {
+    /**
+     *
+     * @param container
+     * @throws IOException
+     * @throws FontFormatException
+     */
+    public void addComponents(Container container) throws IOException, FontFormatException {
         EndGraphics aloituskuva = new EndGraphics(this.game);
         container.add(aloituskuva);
         
         for (KeyListener kl : frame.getKeyListeners()) {
             frame.removeKeyListener(kl);
         }
-        
-        frame.addKeyListener(new EndListener(frame));
-        
+        frame.addKeyListener(new EndListener(frame, game));   
     }
-    
-    
 }
 

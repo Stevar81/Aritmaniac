@@ -48,18 +48,16 @@
                 <version>1.1.8</version>
                 <configuration>
                     <targetClasses>
-                        <param>aritmaniac.logic.*</param>
-                        <param>aritmaniac.gui.*</param>
-                        <param>aritmaniac.graphics.*</param>
-                        <param>aritmaniac.actors.*</param>
-                        <param>aritmaniac.listeners.*</param>
+                        <param>logic.*</param>
+                        <param>graphics.*</param>
+                        <param>actors.*</param>
+                        <param>listeners.*</param>
                     </targetClasses>
                     <targetTests>
-                        <param>aritmaniac.logic.*</param>
-                        <param>aritmaniac.gui.*</param>
-                        <param>aritmaniac.graphics.*</param>
-                        <param>aritmaniac.actors.*</param>
-                        <param>aritmaniac.listeners.*</param>
+                        <param>logic.*</param>
+                        <param>graphics.*</param>
+                        <param>actors.*</param>
+                        <param>listeners.*</param>
                     </targetTests>
                 </configuration>
             </plugin>

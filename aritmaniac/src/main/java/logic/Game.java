@@ -13,94 +13,138 @@ public class Game {
     
     private int level;
     private int points;
-    private int counter;
+    private int counter;           
     private Calculation calc;
     private int timeLeft;
+    private String player;
         
-    
-    public Game() {
+    /**
+     *
+     * @param player Who is playing the game
+     */
+    public Game(String player) {
         this.counter = 0;
         this.level = 1;
         this.points = 0;
         this.timeLeft = 60;
         this.calc = new Calculation(this.level);
+        this.player = player;
     }
     
+    /**
+     *
+     * @param player
+     */
+    public void setPlayer(String player) {
+        this.player = player;
+    }
+    
+    /**
+     *
+     * @return
+     */
+    public String getPlayer() {
+        return this.player;
+    }
+    
+    /**
+     *
+     * @return
+     */
     public int getLevel() {
         return this.level;
     }
     
+    /**
+     *
+     * @return
+     */
     public String getPoints() {
         return Integer.toString(this.points);
     }
 
-    public void setPoints() {
+    /**
+     * Increases points based on current level. 
+     * Counter resets after five consecutive right answers. And new level's been reached.
+     */
 
+    public void setPoints() {
+        
         points = points + level;
         
         this.counter++;
         
-        if (counter == 5 && level < 5) {
+        if (counter == 5) {         
             this.counter = 0;
             level++;
         }
     }
     
+    /**
+     *
+     */
     public void decPoints() {
         
-        this.points -= this.level * this.counter;
+        //A wrong answer takes you back to start of current level. In other words, removes earned points and resets counter. 
+        this.points = this.points - (this.level * this.counter);
         
         this.counter = 0;
         
-        if (this.points < 0) {
-            this.points = 0;
-        }
     }
 
+    /**
+     *
+     * @return
+     */
     public String getCalc() {
         return this.calc.toString();
     }
 
+    /**
+     *
+     * @return
+     */
     public int getResult() {
         return this.calc.getResult();
     }
 
+    /**
+     *
+     */
     public void newCalc() {
         this.calc = new Calculation(this.level);
     }
 
+    /**
+     *
+     */
     public void setTime() {
         this.timeLeft--;
     }
     
+    /**
+     *
+     * @param i
+     */
     public void setTime(int i) {
         this.timeLeft = i;
     }
 
+    /**
+     *
+     * @return
+     */
     public String getTimeString() {
         
         return "Time: " + Integer.toString(this.timeLeft);
     }
     
+    /**
+     *
+     * @return
+     */
     public int getTime() {
         return this.timeLeft;
-    }
-
-    public String getCounter() {
-        if (counter == 0) {
-            return "☆☆☆☆☆";
-        } else if (counter == 1) {
-            return "★☆☆☆☆";
-        } else if (counter == 2) {
-            return "★★☆☆☆";
-        } else if (counter == 3) {
-            return "★★★☆☆";
-        } else if (counter == 4) {
-            return "★★★★☆";
-        }
-            
-        return "★★★★★";
-        
     }
     
 }

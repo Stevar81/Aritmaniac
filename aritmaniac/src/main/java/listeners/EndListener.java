@@ -5,19 +5,34 @@
  */
 package listeners;
 
+import gui.Menu;
 import gui.Start;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
+import logic.Game;
 
-
+/**
+ *
+ * @author Tomi
+ */
 public class EndListener implements KeyListener{
     
     private JFrame frame;
+    private Game game;
     
-    public EndListener (JFrame frame) {
+    /**
+     *
+     * @param frame
+     * @param game
+     */
+    public EndListener (JFrame frame, Game game) {
         this.frame = frame;
+        this.game = game;
     }
 
     @Override
@@ -26,8 +41,21 @@ public class EndListener implements KeyListener{
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        if (ke.getKeyCode() == KeyEvent.VK_ENTER) {            
-            SwingUtilities.invokeLater(new Start(frame));            
+        if (ke.getKeyCode() == KeyEvent.VK_SPACE) {            
+            SwingUtilities.invokeLater(new Start(frame, game.getPlayer()));            
+        }
+        if (ke.getKeyCode() == KeyEvent.VK_ESCAPE) {            
+            frame.setVisible(false);
+            frame.dispose();
+        }
+        if (ke.getKeyCode() == KeyEvent.VK_M) {            
+            try {            
+                SwingUtilities.invokeLater(new Menu());
+                frame.setVisible(false);
+                frame.dispose();
+            } catch (IOException ex) {
+                Logger.getLogger(EndListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
     }
 

@@ -18,26 +18,43 @@ import static org.junit.Assert.*;
  */
 public class CalculationTest {
     
+    /**
+     *
+     */
     public CalculationTest() {
     }
     
+    /**
+     *
+     */
     @BeforeClass
     public static void setUpClass() {
     }
     
+    /**
+     *
+     */
     @AfterClass
     public static void tearDownClass() {
     }
     
+    /**
+     *
+     */
     @Before
     public void setUp() {
     }
     
+    /**
+     *
+     */
     @After
     public void tearDown() {
     }
 
-    
+    /**
+     *
+     */
     @Test
     public void testDivision() {
 
@@ -65,6 +82,9 @@ public class CalculationTest {
         
     }
     
+    /**
+     *
+     */
     @Test 
     public void generateEasyCalculation() {
         
@@ -87,6 +107,9 @@ public class CalculationTest {
         assertEquals(calc.getResult(), result);
     }
     
+    /**
+     *
+     */
     @Test 
     public void generateHardCalculation() {
         
@@ -100,7 +123,7 @@ public class CalculationTest {
             result = firstNumber + secondNumber;
         } else if (oper == '-') {
             result = firstNumber - secondNumber;
-        } else if (oper == '*') {
+        } else if (oper == '·') {
             result = firstNumber * secondNumber;
         } else if (oper == '/') {
             result = firstNumber / secondNumber;

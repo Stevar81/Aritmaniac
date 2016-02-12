@@ -5,24 +5,16 @@
  */
 package gui;
 
-import graphics.EndGraphics;
 import graphics.GameGraphics;
-import java.awt.Container;
-import java.awt.Dimension;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.awt.FontFormatException;
 import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
-import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-import javax.swing.WindowConstants;
 import listeners.GameListener;
-import listeners.MenuListener;
 import listeners.TimerListener;
-import logic.Calculation;
 import logic.Game;
 
 /**
@@ -34,9 +26,14 @@ public class Start implements Runnable {
     private JFrame frame;
     private Game game;
     
-    public Start(JFrame frame){
+    /**
+     *
+     * @param frame
+     * @param name
+     */
+    public Start(JFrame frame, String name){
         this.frame = frame;
-        this.game = new Game();
+        this.game = new Game(name);
     }
     
     @Override
@@ -58,12 +55,20 @@ public class Start implements Runnable {
             
         } catch (IOException ex) {
             Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (FontFormatException ex) {
+            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
     
-     public void start(Game game, GameGraphics gg, JFrame frame) throws IOException {        
+    /**
+     *
+     * @param game
+     * @param gg
+     * @param frame
+     * @throws IOException
+     */
+    public void start(Game game, GameGraphics gg, JFrame frame) throws IOException {        
         new Timer(1000, new TimerListener(frame, gg, game)).start();
      }
-     
-
+    
 }

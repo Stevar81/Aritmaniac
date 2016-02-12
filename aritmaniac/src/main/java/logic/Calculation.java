@@ -3,6 +3,10 @@ package logic;
 
 import logic.Operator;
 
+/**
+ *
+ * @author Tomi
+ */
 public class Calculation {
     
     private int firstNumber;
@@ -11,6 +15,10 @@ public class Calculation {
     private Operator operator;
     private char oper;
     
+    /**
+     *
+     * @param level
+     */
     public Calculation(int level) {
         this.level = level;
         this.firstNumber = (int)(Math.random()*(Math.pow(this.level, 2) * 10));
@@ -22,12 +30,14 @@ public class Calculation {
             
             secondNumber = (int)(Math.random()*(this.level * 10));
             
+            //Making sure that denominator is not zero.
             if (secondNumber == 0) {
                 while (!(secondNumber != 0)) {
                     secondNumber = (int) (Math.random() * 10);
                 }
             }
-
+            
+            //Making sure that answer is integer.
             if (firstNumber % secondNumber != 0) {
                 while (!(firstNumber % secondNumber == 0)) {
                     firstNumber++;
@@ -43,6 +53,7 @@ public class Calculation {
         if (this.oper == '-') {
             int temp = 0;
             
+            //Making sure that answer is a positive integer.
             if (this.firstNumber < this.secondNumber) {
                 temp = this.firstNumber;
                 this.firstNumber = this.secondNumber;
@@ -56,18 +67,34 @@ public class Calculation {
         return (firstNumber + " " + oper + " " + secondNumber);
     }
     
+    /**
+     *
+     * @return
+     */
     public int getFirst() {
         return this.firstNumber;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getSecond() {
         return this.secondNumber;
     }
     
+    /**
+     *
+     * @return
+     */
     public char getOperator() {
         return this.oper;
     }
     
+    /**
+     *
+     * @return
+     */
     public int getResult() {
         
         int result = 0;
@@ -76,7 +103,7 @@ public class Calculation {
             result = firstNumber + secondNumber;
         } else if (oper == '-') {
             result = firstNumber - secondNumber;
-        } else if (oper == '*') {
+        } else if (oper == '·') {
             result = firstNumber * secondNumber;
         } else if (oper == '/') {
             result = firstNumber / secondNumber;

@@ -28,6 +28,12 @@ public class TimerListener implements ActionListener {
     private GameGraphics gg;
     private Game game;
 
+    /**
+     *
+     * @param frame
+     * @param gg
+     * @param game
+     */
     public TimerListener(JFrame frame, GameGraphics gg, Game game) {
         this.frame = frame;
         this.gg = gg;
