@@ -5,6 +5,7 @@
  */
 package listeners;
 
+import gui.HighScores;
 import gui.Menu;
 import gui.Start;
 import java.awt.event.KeyEvent;
@@ -56,6 +57,14 @@ public class EndListener implements KeyListener{
             } catch (IOException ex) {
                 Logger.getLogger(EndListener.class.getName()).log(Level.SEVERE, null, ex);
             }
+        }
+        if (ke.getKeyCode() == KeyEvent.VK_F1) {            
+            try {
+                SwingUtilities.invokeLater(new HighScores(frame));
+            } catch (IOException ex) {
+                Logger.getLogger(EndListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            frame.setVisible(false);
         }
     }
 

@@ -10,7 +10,11 @@ import gui.Start;
 import gui.End;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -27,17 +31,20 @@ public class TimerListener implements ActionListener {
     private JFrame frame;
     private GameGraphics gg;
     private Game game;
+    private BufferedWriter out;
 
     /**
      *
      * @param frame
      * @param gg
      * @param game
+     * @throws java.io.FileNotFoundException
      */
-    public TimerListener(JFrame frame, GameGraphics gg, Game game) {
+    public TimerListener(JFrame frame, GameGraphics gg, Game game) throws FileNotFoundException, IOException {
         this.frame = frame;
         this.gg = gg;
         this.game = game;
+        this.out = new BufferedWriter(new FileWriter("src\\main\\java\\graphics\\filename.txt", true));
     }
 
     @Override
@@ -47,6 +54,8 @@ public class TimerListener implements ActionListener {
             if (game.getTime() <= 0) {
                 ((Timer) e.getSource()).stop();
                 SwingUtilities.invokeLater(new End(frame, game));
+                out.write(game.getPoints() + ": " + game.getPlayer() + "\n");
+                out.close( );
             } else {
                 game.setTime();
             }

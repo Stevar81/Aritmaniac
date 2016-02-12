@@ -10,9 +10,13 @@ import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 import logic.Game;
@@ -21,27 +25,27 @@ import logic.Game;
  *
  * @author Tomi
  */
-public class EndGraphics extends JPanel {
+public class HighScoresGraphics extends JPanel {
     
     private Image backgroundImage; 
-    private Game game;
     private Font f;
+    private BufferedWriter out;
+    Scanner in;
     
     /**
      *
-     * @param game
      * @throws IOException
      * @throws FontFormatException
      */
-    public EndGraphics(Game game) throws IOException, FontFormatException {
-        this.game = game;
-        
+    public HighScoresGraphics() throws IOException, FontFormatException {
+     
         String PicBasePath = new File("src\\main\\java\\graphics\\blackboard.jpg").getAbsolutePath();
         String fontBasePath = new File("src\\main\\java\\graphics\\ColoredCrayons.ttf").getAbsolutePath();
         
         f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 50);
 
         backgroundImage = ImageIO.read(new File(PicBasePath));
+        this.in = new Scanner(new FileReader("src\\main\\java\\graphics\\filename.txt"));
     }
     
     @Override
@@ -50,20 +54,18 @@ public class EndGraphics extends JPanel {
         graphics.drawImage(backgroundImage, 0, 0, 800, 500, this);
         graphics.setColor(white);
         graphics.setFont(f);
-        graphics.drawString("Game Over!", 150, 180);
-        graphics.setFont(new Font("Serif", Font.PLAIN, 30));
-        if (game.getPoints().equals("1")) {
-            graphics.drawString("You got " + game.getPoints() + " point", 450, 180);
-        } else {
-            graphics.drawString("You got " + game.getPoints() + " points", 450, 180);
-        }
-        graphics.setFont(new Font("Serif", Font.PLAIN, 20));
-        graphics.drawString("You didn't make it to...", 150, 290);
+        graphics.drawString("High scores", 150, 180);
         graphics.setFont(new Font("Monospaced", Font.PLAIN, 16));
-        graphics.drawString("[Esc] Exit", 480, 450);
-        graphics.drawString("[M] Menu", 365, 450);
-        graphics.drawString("[Space] Start a new game", 80, 450);
-        graphics.drawString("[F1] High Scores", 605, 450);
+        int x = 0;
+        while (in.hasNext()) {
+            graphics.drawString(in.next(), 215, 200 + x);
+            x += 20;
+        }
+        
+        
+        
+        graphics.drawString("[Esc] Back", 515, 450);
     }
     
 }
+

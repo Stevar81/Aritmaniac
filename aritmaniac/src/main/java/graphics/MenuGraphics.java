@@ -15,7 +15,6 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
-import static javax.swing.SwingConstants.CENTER;
 
 /**
  *
@@ -55,7 +54,8 @@ public class MenuGraphics extends JPanel {
         graphics.drawString("Welcome to Aritmaniac!", 150, 220);
         graphics.drawString(this.name, 290, 330);
         graphics.setFont(new Font("Monospaced", Font.PLAIN, 16));
-        graphics.drawString("Type your name and press Space to start!", 200, 450);
+        graphics.drawString("Type your name and press Space to start!", 100, 450);
+        graphics.drawString("[F1] High Scores", 600, 450);
     }
     
     /**

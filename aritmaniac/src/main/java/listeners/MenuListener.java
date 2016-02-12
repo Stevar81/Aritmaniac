@@ -6,9 +6,13 @@
 package listeners;
 
 import graphics.MenuGraphics;
+import gui.HighScores;
 import gui.Start;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
@@ -18,6 +22,7 @@ import javax.swing.SwingUtilities;
  */
 public class MenuListener implements KeyListener{
     
+    final String chars = "zaqxswcdevfrbgtnhymjukiloöpäå";
     private JFrame frame;
     private String name;
     private MenuGraphics mg;
@@ -47,10 +52,17 @@ public class MenuListener implements KeyListener{
                 temp += name.charAt(i);
             }
             name = temp;
-        } else {
+        } else if (ke.getKeyCode() == KeyEvent.VK_F1) {            
+            try {
+                SwingUtilities.invokeLater(new HighScores(frame));
+            } catch (IOException ex) {
+                Logger.getLogger(MenuListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            frame.setVisible(false);
+        } else if (chars.contains(Character.toString(ke.getKeyChar()))){
             if (name.length() <= 8)
                 name = name + ke.getKeyChar();
-        }
+        } 
 
         this.mg.refreshName(name);
         this.mg.repaint();

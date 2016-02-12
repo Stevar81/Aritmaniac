@@ -38,3 +38,6 @@ Improving code and writing few tests
 ## 10.2. 14-16
 Improving code
 
+## 12.2. 13-16
+Adding a high scores window and filewriter and improing layout
+
