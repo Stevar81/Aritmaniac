@@ -26,7 +26,7 @@ public class Game {
         this.counter = 0;
         this.level = 1;
         this.points = 0;
-        this.timeLeft = 60;
+        this.timeLeft = 2;
         this.calc = new Calculation(this.level);
         this.player = player;
     }
