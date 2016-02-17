@@ -6,6 +6,7 @@
 package actors;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
@@ -24,12 +25,15 @@ public class Scores {
     public void setScore(Player player) {
         this.scores.add(player);
     }
-	
-    public static Comparator<Player> pointsComparator = (Player player1, Player player2) -> player1.compareTo(player2);
     
     public List<Player> getList() {
-        this.scores.sort(pointsComparator);
+        Collections.sort(this.scores, new Comparator<Player>() {
+            @Override
+            public int compare(Player player1, Player player2) {
+                return player1.compareTo(player2);
+            }
+        });
         return this.scores;
     }
-    
+      
 }

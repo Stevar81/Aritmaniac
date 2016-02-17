@@ -64,7 +64,7 @@ public class HighScoresGraphics extends MainGraphics {
     @Override
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
-        graphics.drawImage(backgroundImage, 0, 0, 800, 500, this);
+        graphics.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
         graphics.setColor(white);
         graphics.setFont(f1);
         graphics.drawString("High scores", 150, 80);

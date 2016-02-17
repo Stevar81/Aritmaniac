@@ -30,8 +30,8 @@ public class MainGraphics extends JPanel{
      * @throws FontFormatException
      */
     public MainGraphics() throws IOException, FontFormatException {
-        String PicBasePath = new File("src\\main\\resources\\blackboard.jpg").getAbsolutePath();
-        String fontBasePath = new File("src\\main\\resources\\ColoredCrayons.ttf").getAbsolutePath();
+        String PicBasePath = new File("src/main/resources/blackboard.jpg").getAbsolutePath();
+        String fontBasePath = new File("src/main/resources/ColoredCrayons.ttf").getAbsolutePath();
 
         f1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 50);
         f2 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 32);
