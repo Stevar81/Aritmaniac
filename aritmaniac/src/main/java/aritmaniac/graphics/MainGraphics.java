@@ -5,8 +5,10 @@
  */
 package graphics;
 
+import static java.awt.Color.white;
 import java.awt.Font;
 import java.awt.FontFormatException;
+import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.FileInputStream;
