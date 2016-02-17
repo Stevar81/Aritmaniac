@@ -6,28 +6,19 @@
 package graphics;
 
 import static java.awt.Color.white;
-import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
-import java.awt.Image;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
-import javax.imageio.ImageIO;
-import javax.swing.JPanel;
 import logic.Game;
 
 /**
  *
  * @author Tomi
  */
-public class GameGraphics extends JPanel {
-    
-        private Image backgroundImage; 
+public class GameGraphics extends MainGraphics {
+     
         private String answer;
         private Game game;
-        private Font f;
-        private Font f2;
 
     /**
      *
@@ -38,14 +29,6 @@ public class GameGraphics extends JPanel {
     public GameGraphics(Game game) throws IOException, FontFormatException {
         this.game = game;
         this.answer = "";
-        
-        String PicBasePath = new File("src\\main\\java\\graphics\\blackboard.jpg").getAbsolutePath();
-        String fontBasePath = new File("src\\main\\java\\graphics\\ColoredCrayons.ttf").getAbsolutePath();
-        
-        f = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 50);
-        f2 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 30);
-        
-        backgroundImage = ImageIO.read(new File(PicBasePath));
     }
     
     @Override
@@ -53,7 +36,7 @@ public class GameGraphics extends JPanel {
         super.paintComponent(graphics);
         graphics.drawImage(backgroundImage, 0, 0, 800, 500, this);
         graphics.setColor(white);
-        graphics.setFont(f);
+        graphics.setFont(f1);
         graphics.drawString(game.getCalc(), 350, 270);
         graphics.drawString(answer, 580, 270);
         graphics.setFont(f2);

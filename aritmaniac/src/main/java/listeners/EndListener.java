@@ -60,11 +60,10 @@ public class EndListener implements KeyListener{
         }
         if (ke.getKeyCode() == KeyEvent.VK_F1) {            
             try {
-                SwingUtilities.invokeLater(new HighScores(frame));
+                SwingUtilities.invokeLater(new HighScores());
             } catch (IOException ex) {
                 Logger.getLogger(EndListener.class.getName()).log(Level.SEVERE, null, ex);
             }
-            frame.setVisible(false);
         }
     }
 

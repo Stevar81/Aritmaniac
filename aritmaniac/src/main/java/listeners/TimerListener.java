@@ -14,7 +14,6 @@ import java.io.BufferedWriter;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
@@ -44,7 +43,7 @@ public class TimerListener implements ActionListener {
         this.frame = frame;
         this.gg = gg;
         this.game = game;
-        this.out = new BufferedWriter(new FileWriter("src\\main\\java\\graphics\\filename.txt", true));
+        this.out = new BufferedWriter(new FileWriter("src\\main\\resources\\filename.txt", true));
     }
 
     @Override

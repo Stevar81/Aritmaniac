@@ -11,7 +11,6 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
 import listeners.HighScoresListener;
-import logic.Game;
 
 /**
  *
@@ -20,15 +19,13 @@ import logic.Game;
 public class HighScores implements Runnable{
 
     private JFrame frame;
-    private JFrame frame2;
     
     /**
      *
-     * @param frame
      * @throws IOException
      */
-    public HighScores(JFrame frame) throws IOException{
-        this.frame2 = frame;
+    public HighScores() throws IOException{
+        
     }
     
     @Override
@@ -59,7 +56,7 @@ public class HighScores implements Runnable{
         for (KeyListener kl : frame.getKeyListeners()) {
             frame.removeKeyListener(kl);
         }
-        frame.addKeyListener(new HighScoresListener(frame, frame2));   
+        frame.addKeyListener(new HighScoresListener(frame));   
     }
 }
 

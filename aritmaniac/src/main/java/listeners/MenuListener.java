@@ -54,11 +54,10 @@ public class MenuListener implements KeyListener{
             name = temp;
         } else if (ke.getKeyCode() == KeyEvent.VK_F1) {            
             try {
-                SwingUtilities.invokeLater(new HighScores(frame));
+                SwingUtilities.invokeLater(new HighScores());
             } catch (IOException ex) {
                 Logger.getLogger(MenuListener.class.getName()).log(Level.SEVERE, null, ex);
             }
-            frame.setVisible(false);
         } else if (chars.contains(Character.toString(ke.getKeyChar()))){
             if (name.length() <= 8)
                 name = name + ke.getKeyChar();
