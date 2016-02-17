@@ -18,7 +18,7 @@ import javax.swing.JPanel;
  *
  * @author Tomi
  */
-public class MainGraphics extends JPanel{
+public class MainGraphics extends JPanel {
     
     Image backgroundImage; 
     public Font f1;
@@ -30,12 +30,12 @@ public class MainGraphics extends JPanel{
      * @throws FontFormatException
      */
     public MainGraphics() throws IOException, FontFormatException {
-        String PicBasePath = new File("src/main/resources/blackboard.jpg").getAbsolutePath();
+        String picBasePath = new File("src/main/resources/blackboard.jpg").getAbsolutePath();
         String fontBasePath = new File("src/main/resources/ColoredCrayons.ttf").getAbsolutePath();
 
         f1 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 50);
         f2 = Font.createFont(Font.TRUETYPE_FONT, new FileInputStream(new File(fontBasePath))).deriveFont(Font.PLAIN, 32);
 
-        backgroundImage = ImageIO.read(new File(PicBasePath));
+        backgroundImage = ImageIO.read(new File(picBasePath));
     }
 }

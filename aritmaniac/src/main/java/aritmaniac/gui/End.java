@@ -17,7 +17,7 @@ import aritmaniac.logic.Game;
  *
  * @author Tomi
  */
-public class End implements Runnable{
+public class End implements Runnable {
 
     private JFrame frame;
     private Game game;
@@ -28,7 +28,7 @@ public class End implements Runnable{
      * @param game
      * @throws IOException
      */
-    public End(JFrame frame, Game game) throws IOException{
+    public End(JFrame frame, Game game) throws IOException {
         this.game = game;
         this.frame = frame;
     }

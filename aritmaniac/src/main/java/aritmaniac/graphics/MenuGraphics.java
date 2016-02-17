@@ -24,7 +24,7 @@ public class MenuGraphics extends MainGraphics {
      * @throws IOException
      * @throws FontFormatException
      */
-    public MenuGraphics() throws IOException, FontFormatException{
+    public MenuGraphics() throws IOException, FontFormatException {
         this.name = "";
     }
     

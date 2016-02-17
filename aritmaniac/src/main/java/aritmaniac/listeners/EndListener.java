@@ -22,7 +22,7 @@ import javax.swing.SwingUtilities;
  *
  * @author Tomi
  */
-public class EndListener implements KeyListener{
+public class EndListener implements KeyListener {
     
     private JFrame frame;
     private Game game;
@@ -32,7 +32,7 @@ public class EndListener implements KeyListener{
      * @param frame
      * @param game
      */
-    public EndListener (JFrame frame, Game game) {
+    public EndListener(JFrame frame, Game game) {
         this.frame = frame;
         this.game = game;
     }

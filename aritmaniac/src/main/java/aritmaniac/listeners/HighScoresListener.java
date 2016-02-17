@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  *
  * @author Tomi
  */
-public class HighScoresListener implements KeyListener{
+public class HighScoresListener implements KeyListener {
     
     private JFrame frame;
     
@@ -21,7 +21,7 @@ public class HighScoresListener implements KeyListener{
      *
      * @param frame
      */
-    public HighScoresListener (JFrame frame) {
+    public HighScoresListener(JFrame frame) {
         this.frame = frame;
     }
 

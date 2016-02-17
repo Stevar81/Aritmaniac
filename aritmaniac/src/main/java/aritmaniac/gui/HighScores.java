@@ -16,7 +16,7 @@ import aritmaniac.listeners.HighScoresListener;
  *
  * @author Tomi
  */
-public class HighScores implements Runnable{
+public class HighScores implements Runnable {
 
     private JFrame frame;
     
@@ -24,14 +24,14 @@ public class HighScores implements Runnable{
      *
      * @throws IOException
      */
-    public HighScores() throws IOException{
+    public HighScores() throws IOException {
         
     }
     
     @Override
     public void run() {
         frame = new JFrame("Aritmaniac");
-        frame.setLocation(550,150);
+        frame.setLocation(550, 150);
         frame.setPreferredSize(new Dimension(820, 555));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         try {

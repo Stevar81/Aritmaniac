@@ -17,7 +17,7 @@ import aritmaniac.listeners.MenuListener;
  *
  * @author Tomi
  */
-public class Menu implements Runnable{
+public class Menu implements Runnable {
 
     private JFrame frame;
     
@@ -32,7 +32,7 @@ public class Menu implements Runnable{
     public void run() {
         
         frame = new JFrame("Aritmaniac");
-        frame.setLocation(550,150);
+        frame.setLocation(550, 150);
         frame.setPreferredSize(new Dimension(820, 555));
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         try {

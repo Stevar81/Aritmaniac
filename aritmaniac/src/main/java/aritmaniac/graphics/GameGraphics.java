@@ -17,8 +17,8 @@ import aritmaniac.logic.Game;
  */
 public class GameGraphics extends MainGraphics {
      
-        private String answer;
-        private Game game;
+    private String answer;
+    private Game game;
 
     /**
      *

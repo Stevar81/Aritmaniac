@@ -54,7 +54,7 @@ public class TimerListener implements ActionListener {
                 ((Timer) e.getSource()).stop();
                 SwingUtilities.invokeLater(new End(frame, game));
                 out.write(game.getPoints() + game.getPlayer() + "\n");
-                out.close( );
+                out.close();
             } else {
                 game.setTime();
             }

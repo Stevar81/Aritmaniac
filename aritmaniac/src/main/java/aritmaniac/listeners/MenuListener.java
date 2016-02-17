@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
  *
  * @author Tomi
  */
-public class MenuListener implements KeyListener{
+public class MenuListener implements KeyListener {
     
     final String chars = "zaqxswcdevfrbgtnhymjukiloöpäå";
     private JFrame frame;
@@ -32,7 +32,7 @@ public class MenuListener implements KeyListener{
      * @param frame
      * @param mg
      */
-    public MenuListener (JFrame frame, MenuGraphics mg) {
+    public MenuListener(JFrame frame, MenuGraphics mg) {
         this.frame = frame;
         this.mg = mg;
         this.name = "";
@@ -58,9 +58,10 @@ public class MenuListener implements KeyListener{
             } catch (IOException ex) {
                 Logger.getLogger(MenuListener.class.getName()).log(Level.SEVERE, null, ex);
             }
-        } else if (chars.contains(Character.toString(ke.getKeyChar()))){
-            if (name.length() <= 8)
+        } else if (chars.contains(Character.toString(ke.getKeyChar()))) {
+            if (name.length() <= 8) { 
                 name = name + ke.getKeyChar();
+            }
         } 
 
         this.mg.refreshName(name);

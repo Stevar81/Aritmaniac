@@ -21,14 +21,14 @@ public class Calculation {
      */
     public Calculation(int level) {
         this.level = level;
-        this.firstNumber = (int)(Math.random()*(Math.pow(this.level, 2) * 10));
-        this.secondNumber = (int)(Math.random()*(Math.pow(this.level, 2) * 10));
+        this.firstNumber = (int) (Math.random() * (Math.pow(this.level, 2) * 10));
+        this.secondNumber = (int) (Math.random() * (Math.pow(this.level, 2) * 10));
         this.operator = new Operator(this.level);
         this.oper = operator.getOperator();
         
         if (this.oper == '/') {
             
-            secondNumber = (int)(Math.random()*(this.level * 10));
+            secondNumber = (int) (Math.random() * (this.level * 10));
             
             //Making sure that denominator is not zero.
             if (secondNumber == 0) {
@@ -46,8 +46,8 @@ public class Calculation {
         }
         
         if (this.oper == '·') {
-            this.firstNumber = (int)(Math.random()*(this.level * 10));
-            this.secondNumber = (int)(Math.random()*(this.level * 10));
+            this.firstNumber = (int) (Math.random() * (this.level * 10));
+            this.secondNumber = (int) (Math.random() * (this.level * 10));
         }
         
         if (this.oper == '-') {

@@ -31,7 +31,7 @@ public class Start implements Runnable {
      * @param frame
      * @param name
      */
-    public Start(JFrame frame, String name){
+    public Start(JFrame frame, String name) {
         this.frame = frame;
         this.game = new Game(name);
     }
@@ -67,6 +67,6 @@ public class Start implements Runnable {
      */
     public void start(Game game, GameGraphics gg, JFrame frame) throws IOException {        
         new Timer(1000, new TimerListener(frame, gg, game)).start();
-     }
+    }
     
 }
