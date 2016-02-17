@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package graphics;
+package aritmaniac.graphics;
 
 import static java.awt.Color.white;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.io.IOException;
-import logic.Game;
+import aritmaniac.logic.Game;
 
 /**
  *

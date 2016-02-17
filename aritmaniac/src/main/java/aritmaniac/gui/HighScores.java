@@ -1,6 +1,6 @@
-package gui;
+package aritmaniac.gui;
 
-import graphics.HighScoresGraphics;
+import aritmaniac.graphics.HighScoresGraphics;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FontFormatException;
@@ -10,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import listeners.HighScoresListener;
+import aritmaniac.listeners.HighScoresListener;
 
 /**
  *

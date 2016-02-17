@@ -1,6 +1,6 @@
-package gui;
+package aritmaniac.gui;
 
-import graphics.EndGraphics;
+import aritmaniac.graphics.EndGraphics;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FontFormatException;
@@ -10,8 +10,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.WindowConstants;
-import listeners.EndListener;
-import logic.Game;
+import aritmaniac.listeners.EndListener;
+import aritmaniac.logic.Game;
 
 /**
  *

@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listeners;
+package aritmaniac.listeners;
 
-import graphics.GameGraphics;
-import gui.Start;
-import gui.End;
+import aritmaniac.graphics.GameGraphics;
+import aritmaniac.gui.Start;
+import aritmaniac.gui.End;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.BufferedWriter;
@@ -19,7 +19,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.Timer;
-import logic.Game;
+import aritmaniac.logic.Game;
 
 /**
  *

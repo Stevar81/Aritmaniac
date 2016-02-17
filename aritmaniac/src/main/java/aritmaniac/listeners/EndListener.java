@@ -3,11 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listeners;
+package aritmaniac.listeners;
 
-import gui.HighScores;
-import gui.Menu;
-import gui.Start;
+import aritmaniac.logic.Game;
+import aritmaniac.gui.HighScores;
+import aritmaniac.gui.Menu;
+import aritmaniac.gui.Start;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
@@ -15,7 +16,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import logic.Game;
+
 
 /**
  *

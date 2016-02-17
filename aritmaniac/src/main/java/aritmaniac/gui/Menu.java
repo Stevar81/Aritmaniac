@@ -1,7 +1,7 @@
 
-package gui;
+package aritmaniac.gui;
 
-import graphics.MenuGraphics;
+import aritmaniac.graphics.MenuGraphics;
 import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.FontFormatException;
@@ -11,7 +11,7 @@ import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.WindowConstants;
-import listeners.MenuListener;
+import aritmaniac.listeners.MenuListener;
 
 /**
  *

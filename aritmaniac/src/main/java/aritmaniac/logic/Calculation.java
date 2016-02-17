@@ -1,7 +1,7 @@
 
-package logic;
+package aritmaniac.logic;
 
-import logic.Operator;
+import aritmaniac.logic.Operator;
 
 /**
  *

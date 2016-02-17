@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package gui;
+package aritmaniac.gui;
 
-import graphics.GameGraphics;
+import aritmaniac.graphics.GameGraphics;
 import java.awt.FontFormatException;
 import java.awt.event.KeyListener;
 import java.io.IOException;
@@ -13,9 +13,9 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFrame;
 import javax.swing.Timer;
-import listeners.GameListener;
-import listeners.TimerListener;
-import logic.Game;
+import aritmaniac.listeners.GameListener;
+import aritmaniac.listeners.TimerListener;
+import aritmaniac.logic.Game;
 
 /**
  *
@@ -53,9 +53,7 @@ public class Start implements Runnable {
             
             start(game, start, frame);
             
-        } catch (IOException ex) {
-            Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FontFormatException ex) {
+        } catch (IOException | FontFormatException ex) {
             Logger.getLogger(Start.class.getName()).log(Level.SEVERE, null, ex);
         }
     }

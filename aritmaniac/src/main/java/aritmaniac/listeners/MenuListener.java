@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package listeners;
+package aritmaniac.listeners;
 
-import graphics.MenuGraphics;
-import gui.HighScores;
-import gui.Start;
+import aritmaniac.graphics.MenuGraphics;
+import aritmaniac.gui.HighScores;
+import aritmaniac.gui.Start;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
