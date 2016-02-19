@@ -9,3 +9,5 @@ A wrong answer will take you back to start of the current level so that you will
 on that level.
 
 Game doesn't have mouse listeners so you will only use you keyboard.
+
+![Alt text](/aritmaniac/documents/Game Sequence.png)
