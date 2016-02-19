@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package logic;
+package aritmaniac.logic;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -18,10 +18,13 @@ import static org.junit.Assert.*;
  */
 public class GameTest {
     
+    private Game game;
+    
     /**
      *
      */
     public GameTest() {
+        this.game = new Game("Matt");
     }
 
     /**
@@ -58,24 +61,19 @@ public class GameTest {
     @Test
     public void setPointsTest() {
 
-        int points = 0;
-        int level = 1;
-        int counter = 0;
-
-        for (int i = 0; i < 10; i++) {
-            points = points + level;
-
-            counter++;
-
-            if (counter == 5) {
-                counter = 0;
-                level++;
-            }
-        }
-
-        assertEquals(0, counter);
-        assertEquals(15, points);
-        assertEquals(3, level);
+        game.setPoints();
+        assertEquals("1", game.getPoints());
+        assertEquals(1, game.getLevel());
+        
+        game.setPoints();
+        assertEquals("2", game.getPoints());
+        assertEquals(1, game.getLevel());
+        
+        game.setPoints();
+        game.setPoints();
+        game.setPoints();
+        assertEquals("5", game.getPoints());
+        assertEquals(2, game.getLevel());
     }
     
     /**
@@ -83,15 +81,24 @@ public class GameTest {
      */
     @Test
     public void decPointsTest() {
-
-        int points = 13;
-        int level = 2;
-        int counter = 4;
-
         
-        points = points - (level * counter);
+        game.setPoints();
+        game.setPoints();
+        game.setPoints();
+        
+        game.decPoints();
+        
+        assertEquals("0", game.getPoints());
+         
+        game.setPoints();
+        game.setPoints();
+        game.setPoints();
+        game.setPoints();
+        game.setPoints();
 
-        assertEquals(5, points);
+        game.decPoints();
+
+        assertEquals("5", game.getPoints());
     }
     
 }

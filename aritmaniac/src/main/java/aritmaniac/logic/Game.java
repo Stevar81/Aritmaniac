@@ -33,14 +33,6 @@ public class Game {
     
     /**
      *
-     * @param player
-     */
-    public void setPlayer(String player) {
-        this.player = player;
-    }
-    
-    /**
-     *
      * @return
      */
     public String getPlayer() {

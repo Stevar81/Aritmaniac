@@ -4,10 +4,8 @@
  * and open the template in the editor.
  */
 
-package actors;
+package aritmaniac.actors;
 
-import java.util.ArrayList;
-import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,11 +20,6 @@ import static org.junit.Assert.*;
 public class ScoresTest {
     
     private Scores scores;
-    private Player a;
-    private Player b;
-    private Player c;
-    private Player d;
-    private Player e;
     
     public ScoresTest() {
         this.scores = new Scores();

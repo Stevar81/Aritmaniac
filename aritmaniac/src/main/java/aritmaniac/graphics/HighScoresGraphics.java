@@ -5,8 +5,8 @@
  */
 package aritmaniac.graphics;
 
-import actors.Player;
-import actors.Scores;
+import aritmaniac.actors.Player;
+import aritmaniac.actors.Scores;
 import static java.awt.Color.white;
 import java.awt.Font;
 import java.awt.FontFormatException;
