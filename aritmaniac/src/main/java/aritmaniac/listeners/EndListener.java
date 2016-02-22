@@ -44,7 +44,11 @@ public class EndListener implements KeyListener {
     @Override
     public void keyPressed(KeyEvent ke) {
         if (ke.getKeyCode() == KeyEvent.VK_SPACE) {            
-            SwingUtilities.invokeLater(new Start(frame, game.getPlayer()));            
+            try {            
+                SwingUtilities.invokeLater(new Start(frame, game.getPlayer()));
+            } catch (IOException ex) {
+                Logger.getLogger(EndListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
         if (ke.getKeyCode() == KeyEvent.VK_ESCAPE) {            
             frame.setVisible(false);

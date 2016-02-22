@@ -1,8 +1,6 @@
 
 package aritmaniac.logic;
 
-import aritmaniac.logic.Operator;
-
 /**
  *
  * @author Tomi

@@ -10,4 +10,4 @@ on that level.
 
 Game doesn't have mouse listeners so you will only use you keyboard.
 
-![Alt text](/aritmaniac/documents/Game Sequence.png)
+![Alt text](/documents/Game Sequence.png)

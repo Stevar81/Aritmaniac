@@ -23,8 +23,8 @@ import java.util.Scanner;
  */
 public class HighScoresGraphics extends MainGraphics {
 
-    final String chars = "1234567890";
-    private Scanner in;
+    
+   
     private Scores scores;
 
     /**
@@ -34,31 +34,7 @@ public class HighScoresGraphics extends MainGraphics {
      * @throws java.io.FileNotFoundException
      */
     public HighScoresGraphics() throws IOException, FontFormatException, FileNotFoundException {
-
-        File f = new File("src\\main\\resources\\filename.txt");
-        this.scores = new Scores();
-
-        if (f.exists() && !f.isDirectory()) {
-            this.in = new Scanner(new FileReader("src\\main\\resources\\filename.txt"));
-
-            while (in.hasNext()) {
-                int i = 0;
-                String line = in.next();
-                String points = "";
-                String name = "";
-                while (chars.contains(Character.toString(line.charAt(i)))) {
-                    points += line.charAt(i);
-                    i++;
-                }
-                while (i < line.length()) {
-                    name += line.charAt(i);
-                    i++;
-                }
-                Player player = new Player(name, Integer.parseInt(points));
-                scores.setScore(player);
-            }
-        }
-
+        this.scores = new Scores(new File("src\\main\\resources\\filename.txt"));
     }
 
     @Override
@@ -73,6 +49,7 @@ public class HighScoresGraphics extends MainGraphics {
         int y = 0;
         int k = 1;
         int s = 0;
+        int n = 0;
         Player o = new Player("", -1);
         String print = "";
 
@@ -85,17 +62,17 @@ public class HighScoresGraphics extends MainGraphics {
                 print = k + ". " + p.getName() + ": " + String.format("%" + (10 - p.getName().length()) + "s", "") + p.getPoints();
                 s++;
             }
-            if (k < 6) {
+            if (n < 5) {
                 graphics.drawString(print, 150, 130 + x);
                 x += 40;
             } else {
                 graphics.drawString(print, 400, 130 + y);
                 y += 40;
             }
-            if (k == 10) {
+            if (n == 9) {
                 break;
             }
-
+            n++;
             o = p;
         }
 

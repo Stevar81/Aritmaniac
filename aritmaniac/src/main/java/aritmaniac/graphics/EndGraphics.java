@@ -5,12 +5,14 @@
  */
 package aritmaniac.graphics;
 
+import aritmaniac.actors.Scores;
 import static java.awt.Color.white;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.io.IOException;
 import aritmaniac.logic.Game;
+import java.io.File;
 
 /**
  *
@@ -19,6 +21,7 @@ import aritmaniac.logic.Game;
 public class EndGraphics extends MainGraphics {
      
     private Game game;
+    private Scores scores;
     
     /**
      *
@@ -28,6 +31,7 @@ public class EndGraphics extends MainGraphics {
      */
     public EndGraphics(Game game) throws IOException, FontFormatException {
         this.game = game;
+        this.scores = new Scores(new File("src\\main\\resources\\filename.txt"));
     }
     
     @Override
@@ -43,8 +47,12 @@ public class EndGraphics extends MainGraphics {
         } else {
             graphics.drawString("You got " + game.getPoints() + " points", 450, 180);
         }
-        graphics.setFont(new Font("Serif", Font.PLAIN, 20));
-        graphics.drawString("You didn't make it to...", 150, 290);
+        graphics.setFont(new Font("Serif", Font.PLAIN, 30));
+        if (this.scores.getList().get(9).getPoints() >= Integer.parseInt(game.getPoints())) {
+            graphics.drawString("You didn't make it to top ten.", 150, 290);
+        } else {
+            graphics.drawString("You made it to top ten!!", 150, 290);
+        }
         graphics.setFont(new Font("Monospaced", Font.PLAIN, 16));
         graphics.drawString("[Esc] Exit", 480, 450);
         graphics.drawString("[M] Menu", 365, 450);

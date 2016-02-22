@@ -44,8 +44,14 @@ public class MenuListener implements KeyListener {
 
     @Override
     public void keyPressed(KeyEvent ke) {
-        if (ke.getKeyCode() == KeyEvent.VK_SPACE) {            
-            SwingUtilities.invokeLater(new Start(frame, name));            
+        if (ke.getKeyCode() == KeyEvent.VK_SPACE) {   
+            if (!name.equals("")) {
+                try {
+                    SwingUtilities.invokeLater(new Start(frame, name));
+                } catch (IOException ex) {
+                    Logger.getLogger(MenuListener.class.getName()).log(Level.SEVERE, null, ex);
+                }
+            }
         } else if (ke.getKeyCode() == KeyEvent.VK_BACK_SPACE) {
             String temp = "";
             for (int i = 0; i < name.length() - 1; i++) {

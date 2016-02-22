@@ -5,27 +5,36 @@
  */
 package aritmaniac.actors;
 
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Scanner;
 
 /**
  *
  * @author Tomi
  */
-public class Scores {
-    
+public final class Scores {
+
     private List<Player> scores;
-    
-    public Scores() {
+    private Scanner in;
+    final String chars = "1234567890";
+    private File f;
+
+    public Scores(File f) throws FileNotFoundException {
         this.scores = new ArrayList<>();
+        this.f = f;
+        makeList();
     }
-    
+
     public void setScore(Player player) {
         this.scores.add(player);
     }
-    
+
     public List<Player> getList() {
         Collections.sort(this.scores, new Comparator<Player>() {
             @Override
@@ -35,5 +44,28 @@ public class Scores {
         });
         return this.scores;
     }
-      
+
+    public void makeList() throws FileNotFoundException {
+        if (f.exists() && !f.isDirectory()) {
+            this.in = new Scanner(f);
+
+            while (in.hasNext()) {
+                int i = 0;
+                String line = in.next();
+                String points = "";
+                String name = "";
+                while (chars.contains(Character.toString(line.charAt(i)))) {
+                    points += line.charAt(i);
+                    i++;
+                }
+                while (i < line.length()) {
+                    name += line.charAt(i);
+                    i++;
+                }
+                Player player = new Player(name, Integer.parseInt(points));
+                setScore(player);
+            }
+        }
+    }
+
 }

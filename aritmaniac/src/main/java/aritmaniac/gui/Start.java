@@ -31,7 +31,7 @@ public class Start implements Runnable {
      * @param frame
      * @param name
      */
-    public Start(JFrame frame, String name) {
+    public Start(JFrame frame, String name) throws IOException {
         this.frame = frame;
         this.game = new Game(name);
     }

@@ -10,6 +10,11 @@ import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.io.IOException;
 import aritmaniac.logic.Game;
+import static java.awt.Color.green;
+import static java.awt.Color.red;
+import java.util.concurrent.TimeUnit;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -19,7 +24,6 @@ public class GameGraphics extends MainGraphics {
      
     private String answer;
     private Game game;
-
     /**
      *
      * @param game
@@ -35,6 +39,10 @@ public class GameGraphics extends MainGraphics {
     public void paintComponent(Graphics graphics) {
         super.paintComponent(graphics);
         graphics.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+        graphics.drawImage(game.getHand(), 100, 100, 100, 100, this);
+        graphics.setColor(green);
+        graphics.setFont(f2);
+        graphics.drawString(game.getLevelUp(), 450, 50);
         graphics.setColor(white);
         graphics.setFont(f1);
         graphics.drawString(game.getCalc(), 350, 270);

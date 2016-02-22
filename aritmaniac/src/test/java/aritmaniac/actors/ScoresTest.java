@@ -6,6 +6,8 @@
 
 package aritmaniac.actors;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -21,8 +23,8 @@ public class ScoresTest {
     
     private Scores scores;
     
-    public ScoresTest() {
-        this.scores = new Scores();
+    public ScoresTest() throws FileNotFoundException {
+        this.scores = new Scores(new File("src\\main\\resources\\testfile.txt"));
  
         this.scores.setScore(new Player("a", 2));
         this.scores.setScore(new Player("b", 1));
