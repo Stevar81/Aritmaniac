@@ -71,7 +71,6 @@ public class Game {
      */
     public String getPoints() {
         this.hand = null;
-        this.levelUp= "";
         return Integer.toString(this.points);
     }
 
@@ -168,6 +167,10 @@ public class Game {
     
     public String getLevelUp() {
         return this.levelUp;
+    }
+    
+    public void setLevelUp() {
+        this.levelUp= "";
     }
     
 }

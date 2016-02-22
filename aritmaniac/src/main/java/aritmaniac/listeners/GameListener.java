@@ -44,6 +44,7 @@ public class GameListener implements KeyListener {
 
         if (e.getKeyCode() == KeyEvent.VK_ENTER) {
             if (!(answer.equals(""))) {
+                game.setLevelUp();
                 if (Integer.parseInt(answer) == game.getResult()) {
                     game.setPoints();
                 } else {
