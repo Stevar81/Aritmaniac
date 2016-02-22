@@ -57,9 +57,9 @@ public class HighScoresGraphics extends MainGraphics {
             if (o.getPoints() != p.getPoints()) {
                 k += s;
                 s = 1;
-                print = k + ". " + p.getName() + ": " + String.format("%" + (10 - p.getName().length()) + "s", "") + p.getPoints();
+                print = k + ". " + p.getName() + "" + String.format("%" + (10 - p.getName().length()) + "s", "") + p.getPoints();
             } else {
-                print = k + ". " + p.getName() + ": " + String.format("%" + (10 - p.getName().length()) + "s", "") + p.getPoints();
+                print = k + ". " + p.getName() + "" + String.format("%" + (10 - p.getName().length()) + "s", "") + p.getPoints();
                 s++;
             }
             if (n < 5) {

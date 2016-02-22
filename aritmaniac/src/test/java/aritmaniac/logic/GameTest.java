@@ -5,6 +5,7 @@
  */
 package aritmaniac.logic;
 
+import java.io.IOException;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -23,7 +24,7 @@ public class GameTest {
     /**
      *
      */
-    public GameTest() {
+    public GameTest() throws IOException {
         this.game = new Game("Matt");
     }
 
