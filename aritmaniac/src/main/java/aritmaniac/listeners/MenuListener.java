@@ -68,7 +68,10 @@ public class MenuListener implements KeyListener {
             if (name.length() <= 8) { 
                 name = name + ke.getKeyChar();
             }
-        } 
+        } else if (ke.getKeyCode() == KeyEvent.VK_ESCAPE) {            
+            frame.setVisible(false);
+            frame.dispose();
+        }
 
         this.mg.refreshName(name);
         this.mg.repaint();

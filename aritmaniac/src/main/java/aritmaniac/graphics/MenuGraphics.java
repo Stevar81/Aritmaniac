@@ -37,8 +37,9 @@ public class MenuGraphics extends MainGraphics {
         graphics.drawString("Welcome to Aritmaniac!", 150, 220);
         graphics.drawString(this.name, 290, 330);
         graphics.setFont(new Font("Monospaced", Font.PLAIN, 16));
-        graphics.drawString("Type your name and press Space to start!", 100, 450);
-        graphics.drawString("[F1] High Scores", 600, 450);
+        graphics.drawString("Type your name and press Space to start!", 50, 450);
+        graphics.drawString("[F1] High Scores", 480, 450);
+        graphics.drawString("[Esc] Exit", 660, 450);
     }
     
     /**
