@@ -43,7 +43,7 @@ public class TimerListener implements ActionListener {
         this.frame = frame;
         this.gg = gg;
         this.game = game;
-        this.out = new BufferedWriter(new FileWriter("src\\main\\resources\\filename.txt", true));
+        this.out = new BufferedWriter(new FileWriter("src/main/resources/filename.txt", true));
     }
 
     @Override

@@ -13,9 +13,7 @@ import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.util.Scanner;
 
 /**
  *
@@ -34,7 +32,7 @@ public class HighScoresGraphics extends MainGraphics {
      * @throws java.io.FileNotFoundException
      */
     public HighScoresGraphics() throws IOException, FontFormatException, FileNotFoundException {
-        this.scores = new Scores(new File("src\\main\\resources\\filename.txt"));
+        this.scores = new Scores(new File("src/main/resources/filename.txt"));
     }
 
     @Override

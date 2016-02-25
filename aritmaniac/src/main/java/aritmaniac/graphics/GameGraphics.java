@@ -11,10 +11,6 @@ import java.awt.Graphics;
 import java.io.IOException;
 import aritmaniac.logic.Game;
 import static java.awt.Color.green;
-import static java.awt.Color.red;
-import java.util.concurrent.TimeUnit;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -43,7 +39,8 @@ public class GameGraphics extends MainGraphics {
         graphics.setColor(green);
         graphics.setFont(f2);
         graphics.drawString(game.getLevelUp(), 450, 50);
-        graphics.setColor(white);
+        graphics.setColor(white);       
+        graphics.drawString("Now playing:   " + game.getPlayer(), 20, 50);
         graphics.setFont(f1);
         graphics.drawString(game.getCalc(), 350, 270);
         graphics.drawString(answer, 580, 270);
