@@ -1,6 +1,6 @@
 **Instructions**
 
-- First you give your name which can contain only letters and can be 1-9 characters long.
+- First you give your name which can contain only letters(a-z) and can be 1-9 characters long.
 - Press Space to start, F1 to watch the highscore-list or Esc to quit.
 - After starting the game you have 100 seconds to answer as many calculations as you can.
   You will reach a new level after every five consecutive right answers. A wrong answer will 

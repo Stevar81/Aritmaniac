@@ -22,7 +22,7 @@ import javax.swing.SwingUtilities;
  */
 public class MenuListener implements KeyListener {
     
-    final String chars = "zaqxswcdevfrbgtnhymjukiloöpäå";
+    final String chars = "zaqxswcdevfrbgtnhymjukilop";
     private JFrame frame;
     private String name;
     private MenuGraphics mg;
