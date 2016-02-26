@@ -12,10 +12,9 @@ import java.awt.FontFormatException;
 import java.awt.Graphics;
 import java.io.IOException;
 import aritmaniac.logic.Game;
-import java.io.File;
 
 /**
- *
+ * Graphics for the view that is visible after the game ends
  * @author Tomi
  */
 public class EndGraphics extends MainGraphics {
@@ -25,13 +24,13 @@ public class EndGraphics extends MainGraphics {
     
     /**
      *
-     * @param game
+     * @param game Information about the game that just ended
      * @throws IOException
      * @throws FontFormatException
      */
     public EndGraphics(Game game) throws IOException, FontFormatException {
         this.game = game;
-        this.scores = new Scores(new File("src/main/resources/filename.txt"));
+        this.scores = new Scores();
     }
     
     @Override

@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
- *
+ * Graphics-class that imports the background picture and font. All the other graphics-classes inherits this class
  * @author Tomi
  */
 public class MainGraphics extends JPanel {

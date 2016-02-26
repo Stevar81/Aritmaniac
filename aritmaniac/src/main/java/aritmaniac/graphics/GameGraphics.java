@@ -13,7 +13,7 @@ import aritmaniac.logic.Game;
 import static java.awt.Color.green;
 
 /**
- *
+ * Graphics for the ongoing game
  * @author Tomi
  */
 public class GameGraphics extends MainGraphics {
@@ -22,7 +22,7 @@ public class GameGraphics extends MainGraphics {
     private Game game;
     /**
      *
-     * @param game
+     * @param game Information of the ongoing game
      * @throws IOException
      * @throws FontFormatException
      */
@@ -51,7 +51,7 @@ public class GameGraphics extends MainGraphics {
     }
     
     /**
-     *
+     * Keylistener calls this to refresh the answer-graphics as it's been typed
      * @param ans
      */
     public void refreshAnswer(String ans) {
@@ -59,8 +59,8 @@ public class GameGraphics extends MainGraphics {
     }
     
     /**
-     *
-     * @param game
+     * Keylistener and timerlistener refresh the game view to keep the time running and new questions coming on the screen
+     * @param game New info about the ongoing game are set
      * @throws IOException
      */
     public void refreshGame(Game game) throws IOException {

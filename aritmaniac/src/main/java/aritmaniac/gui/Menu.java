@@ -14,7 +14,7 @@ import javax.swing.WindowConstants;
 import aritmaniac.listeners.MenuListener;
 
 /**
- *
+ * Creates a frame for Menugraphics
  * @author Tomi
  */
 public class Menu implements Runnable {
@@ -48,7 +48,7 @@ public class Menu implements Runnable {
     }
     
     /**
-     *
+     * Adding graphics and replacing keylisteners
      * @param container
      * @throws IOException
      * @throws FontFormatException

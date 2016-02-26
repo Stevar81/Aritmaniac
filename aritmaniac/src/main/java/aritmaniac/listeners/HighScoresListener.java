@@ -10,7 +10,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 /**
- *
+ * Listener for closing the high score-window
  * @author Tomi
  */
 public class HighScoresListener implements KeyListener {

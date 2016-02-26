@@ -11,7 +11,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- *
+ * The information about the ongoing game
  * @author Tomi
  */
 public class Game {
@@ -66,7 +66,7 @@ public class Game {
     }
     
     /**
-     *
+     * Removing the "thumb up"- or "thumb down"-picture
      * @return
      */
     public String getPoints() {
@@ -75,7 +75,7 @@ public class Game {
     }
 
     /**
-     * Increases points based on current level. 
+     * Increases points based on current level and gives a "thumb up".  
      * Counter resets after five consecutive right answers. And new level's been reached.
      */
 
@@ -94,12 +94,13 @@ public class Game {
     }
     
     /**
-     *
+     * Takes back to start of current level. In other words, removes earned points and resets counter.
+     * Also giving a "thumb down"
      */
     public void decPoints() {
         
         this.hand = this.redHand;
-        //A wrong answer takes you back to start of current level. In other words, removes earned points and resets counter. 
+         
         this.points = this.points - (this.level * this.counter);
         
         this.counter = 0;
@@ -123,30 +124,22 @@ public class Game {
     }
 
     /**
-     *
+     * Getting a new calculation task
      */
     public void newCalc() {
         this.calc = new Calculation(this.level);
     }
 
     /**
-     *
+     * Every second time left decreases.
      */
     public void setTime() {
         this.timeLeft--;
     }
     
     /**
-     *
-     * @param i
-     */
-    public void setTime(int i) {
-        this.timeLeft = i;
-    }
-
-    /**
-     *
-     * @return
+     * 
+     * @return String to be printed on the screen while playing
      */
     public String getTimeString() {
         

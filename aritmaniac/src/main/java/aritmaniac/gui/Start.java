@@ -18,7 +18,7 @@ import aritmaniac.listeners.TimerListener;
 import aritmaniac.logic.Game;
 
 /**
- *
+ * Creates a frame for Gamegraphics
  * @author Tomi
  */
 public class Start implements Runnable {
@@ -30,6 +30,7 @@ public class Start implements Runnable {
      *
      * @param frame
      * @param name
+     * @throws java.io.IOException
      */
     public Start(JFrame frame, String name) throws IOException {
         this.frame = frame;
@@ -59,7 +60,7 @@ public class Start implements Runnable {
     }
     
     /**
-     *
+     * Starting a new game. Setting up the timer.
      * @param game
      * @param gg
      * @param frame

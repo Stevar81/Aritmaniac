@@ -11,12 +11,11 @@ import static java.awt.Color.white;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
-import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- *
+ * Graphics for the high score-list
  * @author Tomi
  */
 public class HighScoresGraphics extends MainGraphics {
@@ -32,7 +31,7 @@ public class HighScoresGraphics extends MainGraphics {
      * @throws java.io.FileNotFoundException
      */
     public HighScoresGraphics() throws IOException, FontFormatException, FileNotFoundException {
-        this.scores = new Scores(new File("src/main/resources/filename.txt"));
+        this.scores = new Scores();
     }
 
     @Override
@@ -42,6 +41,17 @@ public class HighScoresGraphics extends MainGraphics {
         graphics.setColor(white);
         graphics.setFont(f1);
         graphics.drawString("High scores", 150, 80);
+        drawList(graphics);
+        graphics.setFont(new Font("Monospaced", Font.PLAIN, 16));
+        graphics.drawString("[Esc] Back", 515, 450);
+    }
+
+    /**
+     * Printing the high score-list correctly
+     * @param graphics
+     */
+    private void drawList(Graphics graphics) {
+        
         graphics.setFont(f2);
         int x = 0;
         int y = 0;
@@ -73,9 +83,6 @@ public class HighScoresGraphics extends MainGraphics {
             n++;
             o = p;
         }
-
-        graphics.setFont(new Font("Monospaced", Font.PLAIN, 16));
-        graphics.drawString("[Esc] Back", 515, 450);
     }
 
 }

@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 import aritmaniac.logic.Game;
 
 /**
- *
+ * Listener for actions while the game runs
  * @author Tomi
  */
 public class GameListener implements KeyListener {

@@ -13,7 +13,7 @@ import javax.swing.WindowConstants;
 import aritmaniac.listeners.HighScoresListener;
 
 /**
- *
+ * Creates a frame for Highscoregraphics
  * @author Tomi
  */
 public class HighScores implements Runnable {
@@ -33,7 +33,7 @@ public class HighScores implements Runnable {
         frame = new JFrame("Aritmaniac");
         frame.setLocation(550, 150);
         frame.setPreferredSize(new Dimension(820, 555));
-        frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         try {
             addComponents(frame.getContentPane());
         } catch (IOException | FontFormatException ex) {
@@ -44,12 +44,13 @@ public class HighScores implements Runnable {
     }
     
     /**
-     *
+     * Adding graphics and replacing keylisteners
      * @param container
      * @throws IOException
      * @throws FontFormatException
      */
     public void addComponents(Container container) throws IOException, FontFormatException {
+        frame.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         HighScoresGraphics score = new HighScoresGraphics();
         container.add(score);
         

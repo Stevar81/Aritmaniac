@@ -14,7 +14,7 @@ import aritmaniac.listeners.EndListener;
 import aritmaniac.logic.Game;
 
 /**
- *
+ * Creates a frame for Endgraphics
  * @author Tomi
  */
 public class End implements Runnable {
@@ -49,7 +49,7 @@ public class End implements Runnable {
     }
     
     /**
-     *
+     * Adding endgraphics and replacing keylisteners
      * @param container
      * @throws IOException
      * @throws FontFormatException

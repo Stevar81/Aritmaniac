@@ -8,6 +8,7 @@ package aritmaniac.actors;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.Scanner;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -22,9 +23,10 @@ import static org.junit.Assert.*;
 public class ScoresTest {
     
     private Scores scores;
+    private File f;
     
     public ScoresTest() throws FileNotFoundException {
-        this.scores = new Scores(new File("src\\main\\resources\\testfile.txt"));
+        this.scores = new Scores();
  
         this.scores.setScore(new Player("a", 2));
         this.scores.setScore(new Player("b", 1));
@@ -53,6 +55,21 @@ public class ScoresTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
+    
+    @Test
+    public void testMakeList() throws FileNotFoundException {
+        Scores scores2 = new Scores();
+        this.f = new File("src/main/resources/filename.txt");
+        
+        Scanner in = new Scanner(f);
+        int i = 0;
+        while (in.hasNext()) {
+            in.next();
+            i++;
+        }
+        assertEquals(scores2.getList().size(), i);
+    }
+    
     @Test
     public void testOrder() {
         for (int i = 0; i < this.scores.getList().size(); i++) {

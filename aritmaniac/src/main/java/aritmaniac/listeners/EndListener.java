@@ -19,7 +19,7 @@ import javax.swing.SwingUtilities;
 
 
 /**
- *
+ * Listener for actions after the game
  * @author Tomi
  */
 public class EndListener implements KeyListener {

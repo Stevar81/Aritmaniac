@@ -82,38 +82,15 @@ public class CalculationTest {
         
     }
     
-    /**
-     *
-     */
-    @Test 
-    public void generateEasyCalculation() {
-        
-        Calculation calc = new Calculation(1);
-        char oper = calc.getOperator();
-        int firstNumber = calc.getFirst();
-        int secondNumber = calc.getSecond();
-        int result = 0;
-        
-        if (oper == '+') {
-            result = firstNumber + secondNumber;
-        } else if (oper == '-') {
-            result = firstNumber - secondNumber;
-        } else if (oper == '*') {
-            result = firstNumber * secondNumber;
-        } else if (oper == '/') {
-            result = firstNumber / secondNumber;
-        }
-        
-        assertEquals(calc.getResult(), result);
-    }
+  
     
     /**
      *
      */
     @Test 
-    public void generateHardCalculation() {
+    public void generateCalculations() {
         
-        Calculation calc = new Calculation(5);
+        Calculation calc = new Calculation(1);
         char oper = calc.getOperator();
         int firstNumber = calc.getFirst();
         int secondNumber = calc.getSecond();
@@ -130,6 +107,24 @@ public class CalculationTest {
         }
         
         assertEquals(calc.getResult(), result);
+        
+        Calculation calc2 = new Calculation(5);
+        oper = calc2.getOperator();
+        firstNumber = calc2.getFirst();
+        secondNumber = calc2.getSecond();
+        result = 0;
+        
+        if (oper == '+') {
+            result = firstNumber + secondNumber;
+        } else if (oper == '-') {
+            result = firstNumber - secondNumber;
+        } else if (oper == '·') {
+            result = firstNumber * secondNumber;
+        } else if (oper == '/') {
+            result = firstNumber / secondNumber;
+        }
+        
+        assertEquals(calc2.getResult(), result);
     }
     
 

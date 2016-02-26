@@ -1,21 +1,36 @@
-
 package aritmaniac.logic;
 
 /**
+ * Creates +, -, * or / based on the current level
  *
  * @author Tomi
  */
 public class Operator {
-    
+
     private int operatorNumb;
     private char operator;
-    
+
     /**
      *
      * @param level
      */
     public Operator(int level) {
-  
+        createOperator(level);
+    }
+
+    /**
+     *
+     * @return
+     */
+    public char getOperator() {
+        return operator;
+    }
+
+    /**
+     * Creates operator based on level
+     * @param level Current level
+     */
+    private void createOperator(int level) {
         if (level == 1) {
             operatorNumb = (int) (Math.random() * 2);
             if (operatorNumb == 0) {
@@ -82,23 +97,14 @@ public class Operator {
                     operator = '/';
                     break;
             }
-        }
-        else {
+        } else {
             operatorNumb = (int) (Math.random() * 2);
             if (operatorNumb == 0) {
                 operator = '·';
             } else {
                 operator = '/';
             }
-            
+
         }
-    }
-    
-    /**
-     *
-     * @return
-     */
-    public char getOperator() {
-        return operator;
     }
 }

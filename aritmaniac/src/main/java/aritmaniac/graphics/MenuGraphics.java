@@ -12,7 +12,7 @@ import java.awt.Graphics;
 import java.io.IOException;
 
 /**
- *
+ * Graphics for the Menu
  * @author Tomi
  */
 public class MenuGraphics extends MainGraphics {
@@ -20,7 +20,7 @@ public class MenuGraphics extends MainGraphics {
     private String name;
     
     /**
-     *
+     * 
      * @throws IOException
      * @throws FontFormatException
      */
@@ -43,7 +43,7 @@ public class MenuGraphics extends MainGraphics {
     }
     
     /**
-     *
+     * Keylistener calls this to refresh the name-graphics as it's been typed
      * @param name
      */
     public void refreshName(String name) {

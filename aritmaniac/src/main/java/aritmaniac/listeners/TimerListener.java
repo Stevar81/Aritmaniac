@@ -22,7 +22,7 @@ import javax.swing.Timer;
 import aritmaniac.logic.Game;
 
 /**
- *
+ * Timerlistener refreshes the game information every second so that the countdown clock runs and creates the end frame when counter reaches zero.
  * @author Tomi
  */
 public class TimerListener implements ActionListener {

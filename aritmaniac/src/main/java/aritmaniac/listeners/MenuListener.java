@@ -28,7 +28,7 @@ public class MenuListener implements KeyListener {
     private MenuGraphics mg;
     
     /**
-     *
+     * Keylistener for the menu
      * @param frame
      * @param mg
      */
