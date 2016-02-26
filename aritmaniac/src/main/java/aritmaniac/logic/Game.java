@@ -163,7 +163,7 @@ public class Game {
     }
     
     public void setLevelUp() {
-        this.levelUp= "";
+        this.levelUp = "";
     }
     
 }

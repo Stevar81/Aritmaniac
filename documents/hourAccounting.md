@@ -48,4 +48,4 @@ Improving high scores presentation and adding inheritable graphics glass
 Refactoring and adding signs for right and wrong answers
 
 ## 26.2. 10-12
-Instructions, structure description and javadoc improvement
+Instructions, structure description, javadoc improvement, pit and checkstyle
