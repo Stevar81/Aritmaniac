@@ -18,7 +18,7 @@ import aritmaniac.listeners.TimerListener;
 import aritmaniac.logic.Game;
 
 /**
- * Creates a frame for Gamegraphics
+ * Creates a frame for Gamegraphics.
  * @author Tomi
  */
 public class Start implements Runnable {
@@ -27,10 +27,10 @@ public class Start implements Runnable {
     private Game game;
     
     /**
-     *
-     * @param frame
-     * @param name
-     * @throws java.io.IOException
+     * Constructor takes the frame and player's name as parameters.
+     * @param frame frame
+     * @param name name 
+     * @throws java.io.IOException exception
      */
     public Start(JFrame frame, String name) throws IOException {
         this.frame = frame;
@@ -50,7 +50,7 @@ public class Start implements Runnable {
                 frame.removeKeyListener(kl);
             }
 
-            frame.addKeyListener(new GameListener(start, game));
+            frame.addKeyListener(new GameListener(frame, start, game));
             
             start(game, start, frame);
             
@@ -61,10 +61,10 @@ public class Start implements Runnable {
     
     /**
      * Starting a new game. Setting up the timer.
-     * @param game
-     * @param gg
-     * @param frame
-     * @throws IOException
+     * @param game game
+     * @param gg graphics-object
+     * @param frame frame
+     * @throws IOException exception
      */
     public void start(Game game, GameGraphics gg, JFrame frame) throws IOException {        
         new Timer(1000, new TimerListener(frame, gg, game)).start();

@@ -14,7 +14,7 @@ import java.io.IOException;
 import aritmaniac.logic.Game;
 
 /**
- * Graphics for the view that is visible after the game ends
+ * Graphics for the view that is visible after the game ends.
  * @author Tomi
  */
 public class EndGraphics extends MainGraphics {
@@ -23,10 +23,10 @@ public class EndGraphics extends MainGraphics {
     private Scores scores;
     
     /**
-     *
+     * Constructor.
      * @param game Information about the game that just ended
-     * @throws IOException
-     * @throws FontFormatException
+     * @throws IOException exception
+     * @throws FontFormatException exception
      */
     public EndGraphics(Game game) throws IOException, FontFormatException {
         this.game = game;

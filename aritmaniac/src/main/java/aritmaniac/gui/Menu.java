@@ -14,7 +14,7 @@ import javax.swing.WindowConstants;
 import aritmaniac.listeners.MenuListener;
 
 /**
- * Creates a frame for Menugraphics
+ * Creates a frame for Menugraphics.
  * @author Tomi
  */
 public class Menu implements Runnable {
@@ -22,8 +22,8 @@ public class Menu implements Runnable {
     private JFrame frame;
     
     /**
-     *
-     * @throws IOException
+     * Constructor.
+     * @throws IOException exception
      */
     public Menu() throws IOException{
     }
@@ -37,9 +37,7 @@ public class Menu implements Runnable {
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         try {
             addComponents(frame.getContentPane());
-        } catch (IOException ex) {
-            Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (FontFormatException ex) {
+        } catch (IOException | FontFormatException ex) {
             Logger.getLogger(Menu.class.getName()).log(Level.SEVERE, null, ex);
         }
         
@@ -48,10 +46,10 @@ public class Menu implements Runnable {
     }
     
     /**
-     * Adding graphics and replacing keylisteners
-     * @param container
-     * @throws IOException
-     * @throws FontFormatException
+     * Adding graphics and replacing keylisteners.
+     * @param container container 
+     * @throws IOException exception
+     * @throws FontFormatException exception
      */
     public void addComponents(Container container) throws IOException, FontFormatException {
         MenuGraphics mg = new MenuGraphics();
@@ -60,9 +58,9 @@ public class Menu implements Runnable {
     }
     
     /**
-     *
-     * @param args
-     * @throws IOException
+     * Main.
+     * @param args args
+     * @throws IOException exception
      */
     public static void main(String[] args) throws IOException {
         Menu ui = new Menu();

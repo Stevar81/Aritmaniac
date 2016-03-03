@@ -6,31 +6,37 @@
 package aritmaniac.listeners;
 
 import aritmaniac.graphics.GameGraphics;
+import aritmaniac.gui.Menu;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import aritmaniac.logic.Game;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 
 /**
- * Listener for actions while the game runs
+ * Listener for actions while the game runs.
  * @author Tomi
  */
 public class GameListener implements KeyListener {
 
     final String chars = "1234567890";
     private String answer;
+    private JFrame frame;
     private GameGraphics gg;
     private Game game;
 
     /**
-     *
-     * @param gg
-     * @param game
+     * Constructor.
+     * @param frame frame
+     * @param gg game graphics
+     * @param game game
      */
-    public GameListener(GameGraphics gg, Game game) {
+    public GameListener(JFrame frame, GameGraphics gg, Game game) {
         this.answer = "";
+        this.frame = frame;
         this.gg = gg;
         this.game = game;
     }
@@ -68,6 +74,14 @@ public class GameListener implements KeyListener {
                 temp += answer.charAt(i);
             }
             answer = temp;
+        } else if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {            
+            try {            
+                SwingUtilities.invokeLater(new Menu());
+                frame.setVisible(false);
+                frame.dispose();
+            } catch (IOException ex) {
+                Logger.getLogger(EndListener.class.getName()).log(Level.SEVERE, null, ex);
+            }
         }
 
         this.gg.refreshAnswer(answer);

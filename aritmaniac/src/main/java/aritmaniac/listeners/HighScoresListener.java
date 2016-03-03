@@ -10,7 +10,7 @@ import java.awt.event.KeyListener;
 import javax.swing.JFrame;
 
 /**
- * Listener for closing the high score-window
+ * Listener for closing the high score-window.
  * @author Tomi
  */
 public class HighScoresListener implements KeyListener {
@@ -18,8 +18,8 @@ public class HighScoresListener implements KeyListener {
     private JFrame frame;
     
     /**
-     *
-     * @param frame
+     * Constructor.
+     * @param frame frame
      */
     public HighScoresListener(JFrame frame) {
         this.frame = frame;

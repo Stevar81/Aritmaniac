@@ -11,7 +11,7 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 
 /**
- * The information about the ongoing game
+ * The information about the ongoing game.
  * @author Tomi
  */
 public class Game {
@@ -30,9 +30,9 @@ public class Game {
     Image hand;
         
     /**
-     *
+     * Constructor.
      * @param player Who is playing the game
-     * @throws java.io.IOException
+     * @throws java.io.IOException exception
      */
     public Game(String player) throws IOException {
         this.picBasePath = new File("src/main/resources/greenHand.png").getAbsolutePath();
@@ -50,24 +50,24 @@ public class Game {
     }
     
     /**
-     *
-     * @return
+     * Get name of the player. 
+     * @return name
      */
     public String getPlayer() {
         return this.player;
     }
     
     /**
-     *
-     * @return
+     * Get the current level of the game.
+     * @return level
      */
     public int getLevel() {
         return this.level;
     }
     
     /**
-     * Removing the "thumb up"- or "thumb down"-picture
-     * @return
+     * Removing the "thumb up"- or "thumb down"-picture. Get points as a String.
+     * @return points
      */
     public String getPoints() {
         this.hand = null;
@@ -95,7 +95,7 @@ public class Game {
     
     /**
      * Takes back to start of current level. In other words, removes earned points and resets counter.
-     * Also giving a "thumb down"
+     * Also giving a "thumb down".
      */
     public void decPoints() {
         
@@ -108,23 +108,23 @@ public class Game {
     }
 
     /**
-     *
-     * @return
+     * Get calculation as a String.
+     * @return calculation
      */
     public String getCalc() {
         return this.calc.toString();
     }
 
     /**
-     *
-     * @return
+     * Get the result of the calculation.
+     * @return result
      */
     public int getResult() {
         return this.calc.getResult();
     }
 
     /**
-     * Getting a new calculation task
+     * Getting a new calculation task.
      */
     public void newCalc() {
         this.calc = new Calculation(this.level);
@@ -138,7 +138,7 @@ public class Game {
     }
     
     /**
-     * 
+     * Get time as a String.
      * @return String to be printed on the screen while playing
      */
     public String getTimeString() {
@@ -147,21 +147,32 @@ public class Game {
     }
     
     /**
-     *
-     * @return
+     * Get time left as an int.
+     * @return time left
      */
     public int getTime() {
         return this.timeLeft;
     }
     
+    /**
+     * Get the image "thumb up" or "thumb down".
+     * @return image
+     */
     public Image getHand() {
         return this.hand;
     }
     
+    /**
+     * Get the information whether the new level has been reached.
+     * @return level up notification
+     */
     public String getLevelUp() {
         return this.levelUp;
     }
     
+    /**
+     * Empty the "level up"-notification.
+     */
     public void setLevelUp() {
         this.levelUp = "";
     }

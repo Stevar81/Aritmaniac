@@ -14,7 +14,7 @@ public class Calculation {
     private char oper;
     
     /**
-     *
+     * Constructor takes level as an input.
      * @param level The current level in the game
      */
     public Calculation(int level) {
@@ -33,32 +33,32 @@ public class Calculation {
     }
     
     /**
-     *
-     * @return
+     * Get the first number of calculation.
+     * @return first number
      */
     public int getFirst() {
         return this.firstNumber;
     }
     
     /**
-     *
-     * @return
+     * Get the second number of calculation.
+     * @return second number  
      */
     public int getSecond() {
         return this.secondNumber;
     }
     
     /**
-     *
-     * @return
+     * Get the operator of the calculation.
+     * @return operator
      */
     public char getOperator() {
         return this.oper;
     }
     
     /**
-     *
-     * @return
+     * Get the result of the calculation.
+     * @return result
      */
     public int getResult() {
         
@@ -78,7 +78,7 @@ public class Calculation {
     }
     
     /**
-     * Creating numbers so that calculations have proper answers 
+     * Creating numbers so that calculations have proper answers. 
      */
     private void suitableNumbers() {
         if (this.oper == '/') {

@@ -14,7 +14,7 @@ import aritmaniac.listeners.EndListener;
 import aritmaniac.logic.Game;
 
 /**
- * Creates a frame for Endgraphics
+ * Creates a frame for Endgraphics.
  * @author Tomi
  */
 public class End implements Runnable {
@@ -23,10 +23,10 @@ public class End implements Runnable {
     private Game game;
     
     /**
-     *
-     * @param frame
-     * @param game
-     * @throws IOException
+     * Constructor takes frame and game as parameters.
+     * @param frame frame
+     * @param game game
+     * @throws IOException exception
      */
     public End(JFrame frame, Game game) throws IOException {
         this.game = game;
@@ -49,10 +49,10 @@ public class End implements Runnable {
     }
     
     /**
-     * Adding endgraphics and replacing keylisteners
-     * @param container
-     * @throws IOException
-     * @throws FontFormatException
+     * Adding endgraphics and replacing keylisteners.
+     * @param container container
+     * @throws IOException exception
+     * @throws FontFormatException exception
      */
     public void addComponents(Container container) throws IOException, FontFormatException {
         EndGraphics end = new EndGraphics(this.game);

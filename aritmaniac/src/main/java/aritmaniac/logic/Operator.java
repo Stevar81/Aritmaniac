@@ -1,7 +1,7 @@
 package aritmaniac.logic;
 
 /**
- * Creates +, -, * or / based on the current level
+ * Creates +, -, * or / based on the current level.
  *
  * @author Tomi
  */
@@ -11,23 +11,23 @@ public class Operator {
     private char operator;
 
     /**
-     *
-     * @param level
+     * Constructor.
+     * @param level current level
      */
     public Operator(int level) {
         createOperator(level);
     }
 
     /**
-     *
-     * @return
+     * Get the operator.
+     * @return operator
      */
     public char getOperator() {
         return operator;
     }
 
     /**
-     * Creates operator based on level
+     * Creates operator based on current level.
      * @param level Current level
      */
     private void createOperator(int level) {

@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Scanner;
 
 /**
- * Class for the high scores-list
+ * Class for the high scores-list.
  * @author Tomi
  */
 public final class Scores {
@@ -25,8 +25,8 @@ public final class Scores {
     private File f;
 
     /**
-     *
-     * @throws FileNotFoundException
+     * Constructor loads scores-file and creates ArrayList for them.
+     * @throws FileNotFoundException Exception
      */
     public Scores() throws FileNotFoundException {
         this.scores = new ArrayList<>();
@@ -35,16 +35,16 @@ public final class Scores {
     }
 
     /**
-     *
-     * @param player
+     * Adds new player and score to the list.
+     * @param player player
      */
     public void setScore(Player player) {
         this.scores.add(player);
     }
 
     /**
-     * The list of high scores in order
-     * @return
+     * The list of high scores in order.
+     * @return scores
      */
     public List<Player> getList() {
         Collections.sort(this.scores, new Comparator<Player>() {
@@ -58,7 +58,7 @@ public final class Scores {
 
     /**
      * Separating players name and points from the text file. Creating Player-objects from them and putting them in the scores-list.
-     * @throws FileNotFoundException
+     * @throws FileNotFoundException exception
      */
     public void makeList() throws FileNotFoundException {
         if (f.exists() && !f.isDirectory()) {

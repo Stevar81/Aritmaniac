@@ -49,3 +49,6 @@ Refactoring and adding signs for right and wrong answers
 
 ## 26.2. 10-12
 Instructions, structure description, javadoc improvement, pit and checkstyle
+
+## 1.3. 17-20
+improvement in javadoc, checkstyle, description, class diagram and sequence diagram

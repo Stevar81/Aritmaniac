@@ -17,7 +17,7 @@ import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 
 /**
- *
+ * Listens user's actions in menu.
  * @author Tomi
  */
 public class MenuListener implements KeyListener {
@@ -28,9 +28,9 @@ public class MenuListener implements KeyListener {
     private MenuGraphics mg;
     
     /**
-     * Keylistener for the menu
-     * @param frame
-     * @param mg
+     * Constructor.
+     * @param frame frame
+     * @param mg graphics for menu
      */
     public MenuListener(JFrame frame, MenuGraphics mg) {
         this.frame = frame;

@@ -15,7 +15,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 /**
- * Graphics-class that imports the background picture and font. All the other graphics-classes inherits this class
+ * Graphics-class that imports the background picture and font. All the other graphics-classes inherits this class.
  * @author Tomi
  */
 public class MainGraphics extends JPanel {
@@ -25,9 +25,9 @@ public class MainGraphics extends JPanel {
     public Font f2;
     
     /**
-     *
-     * @throws IOException
-     * @throws FontFormatException
+     * Constructor.
+     * @throws IOException exception
+     * @throws FontFormatException exception
      */
     public MainGraphics() throws IOException, FontFormatException {
         String picBasePath = new File("src/main/resources/blackboard.jpg").getAbsolutePath();

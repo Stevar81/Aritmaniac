@@ -33,11 +33,12 @@ public class TimerListener implements ActionListener {
     private BufferedWriter out;
 
     /**
-     *
-     * @param frame
-     * @param gg
-     * @param game
-     * @throws java.io.FileNotFoundException
+     * Constructor.
+     * @param frame frame
+     * @param gg game graphics
+     * @param game game
+     * @throws java.io.FileNotFoundException exception
+     * @throws java.io.IOException exception
      */
     public TimerListener(JFrame frame, GameGraphics gg, Game game) throws FileNotFoundException, IOException {
         this.frame = frame;

@@ -19,7 +19,7 @@ import javax.swing.SwingUtilities;
 
 
 /**
- * Listener for actions after the game
+ * Listener for actions after the game.
  * @author Tomi
  */
 public class EndListener implements KeyListener {
@@ -28,9 +28,9 @@ public class EndListener implements KeyListener {
     private Game game;
     
     /**
-     *
-     * @param frame
-     * @param game
+     * Constructor.
+     * @param frame frame
+     * @param game game
      */
     public EndListener(JFrame frame, Game game) {
         this.frame = frame;

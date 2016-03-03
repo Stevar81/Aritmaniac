@@ -15,6 +15,7 @@ public class Player {
     private int points;
     
     /**
+     * Constructor. Player is created by giving name and points.
      * @param name Player's name
      * @param points Player's points
      */
@@ -24,24 +25,24 @@ public class Player {
     }
     
     /**
-     *
-     * @param points
+     * Set player's points.
+     * @param points points
      */
     public void setPoints(int points) {
         this.points = points;
     }
     
     /**
-     *
-     * @return
+     * Get player's name.
+     * @return name
      */
     public String getName() {
         return this.name;
     }
     
     /**
-     *
-     * @return
+     * Get points.
+     * @return points
      */
     public int getPoints() {
         return this.points;

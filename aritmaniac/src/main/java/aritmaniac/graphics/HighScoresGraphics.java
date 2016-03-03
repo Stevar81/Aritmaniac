@@ -11,11 +11,10 @@ import static java.awt.Color.white;
 import java.awt.Font;
 import java.awt.FontFormatException;
 import java.awt.Graphics;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 
 /**
- * Graphics for the high score-list
+ * Graphics for the high score-list.
  * @author Tomi
  */
 public class HighScoresGraphics extends MainGraphics {
@@ -25,12 +24,11 @@ public class HighScoresGraphics extends MainGraphics {
     private Scores scores;
 
     /**
-     *
-     * @throws IOException
-     * @throws FontFormatException
-     * @throws java.io.FileNotFoundException
+     * Constructor.
+     * @throws IOException exception
+     * @throws FontFormatException exception
      */
-    public HighScoresGraphics() throws IOException, FontFormatException, FileNotFoundException {
+    public HighScoresGraphics() throws IOException, FontFormatException {
         this.scores = new Scores();
     }
 
