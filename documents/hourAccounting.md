@@ -53,5 +53,5 @@ Instructions, structure description, javadoc improvement, pit and checkstyle
 ## 1.3. 17-20
 improvement in javadoc, checkstyle, description, class diagram and sequence diagram
 
-## 4.3. 11-15
-More tests. Trying to make jar-file work in ubuntu
+## 4.3. 11-16
+More tests. Trying to create a working jar-file in ubuntu -> didn't work. Wrote a testing document.

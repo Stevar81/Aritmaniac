@@ -33,7 +33,6 @@ public class Operator {
     private void createOperator(int leve) {
         if (leve == 1) {
             operatorNumb = (int) (Math.random() * 2);
-            System.out.println(operatorNumb);
             if (operatorNumb == 0) {
                 this.operator = '+';
             } else {

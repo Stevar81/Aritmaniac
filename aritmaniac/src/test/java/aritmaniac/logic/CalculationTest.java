@@ -91,6 +91,7 @@ public class CalculationTest {
             int remainder = firstNumber % secondNumber;
 
             assertEquals(remainder, 0);
+            assertFalse(secondNumber == 0);
         }
         
     }
