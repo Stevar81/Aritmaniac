@@ -18,10 +18,23 @@ import static org.junit.Assert.*;
  */
 public class CalculationTest {
     
+    private Calculation calc;
+    private Calculation calc2;
+    private Calculation calc3;
+    private Calculation calc4;
+    private Calculation calc5;
+    private Calculation calc6;
+    
     /**
      *
      */
     public CalculationTest() {
+        this.calc = new Calculation(1);
+        this.calc2 = new Calculation(2);
+        this.calc3 = new Calculation(3);
+        this.calc4 = new Calculation(4);
+        this.calc5 = new Calculation(5);
+        this.calc6 = new Calculation(6);
     }
     
     /**
@@ -89,8 +102,6 @@ public class CalculationTest {
      */
     @Test 
     public void generateCalculations() {
-        
-        Calculation calc = new Calculation(1);
         char oper = calc.getOperator();
         int firstNumber = calc.getFirst();
         int secondNumber = calc.getSecond();
@@ -127,6 +138,59 @@ public class CalculationTest {
         assertEquals(calc2.getResult(), result);
     }
     
-
+    @Test
+    public void testCalc() {
+        assertTrue(calc.toString().charAt(2) == '+' || calc.toString().charAt(2) == '-');
+    }
+    
+    @Test
+    public void testOperator() {
+        assertTrue(this.calc.getOperator() == '+' || this.calc.getOperator() == '-');
+        assertTrue(this.calc2.getOperator() == '+' || this.calc2.getOperator() == '-' || this.calc2.getOperator() == '·');
+        assertTrue(this.calc3.getOperator() == '+' || this.calc3.getOperator() == '-' || this.calc3.getOperator() == '·' || this.calc3.getOperator() == '/');
+        assertTrue(this.calc4.getOperator() == '+' || this.calc4.getOperator() == '-' || this.calc4.getOperator() == '·' || this.calc4.getOperator() == '/');
+        assertTrue(this.calc5.getOperator() == '·' || this.calc5.getOperator() == '/');
+        assertTrue(this.calc6.getOperator() == '·' || this.calc6.getOperator() == '/');
+    }
+    
+    
+    
+    @Test
+    public void numbersTest() {
+        assertTrue(this.calc.getFirst() < 10);
+        assertTrue(this.calc.getSecond() < 10);
+        
+        assertTrue(this.calc2.getFirst() < 40);
+        assertTrue(this.calc2.getSecond() < 40);
+        
+        if (this.calc2.getOperator() == '·') {
+            assertTrue(this.calc2.getFirst() < 20);
+            assertTrue(this.calc2.getSecond() < 20);
+        }
+        
+        assertTrue(this.calc3.getFirst() < 90);
+        assertTrue(this.calc3.getSecond() < 90);
+        
+        if (this.calc3.getOperator() == '·') {
+            assertTrue(this.calc3.getFirst() < 30);
+            assertTrue(this.calc3.getSecond() < 30);
+        }
+        
+        assertTrue(this.calc4.getFirst() < 160);
+        assertTrue(this.calc4.getSecond() < 160);
+        
+        if (this.calc4.getOperator() == '·') {
+            assertTrue(this.calc4.getFirst() < 40);
+            assertTrue(this.calc4.getSecond() < 40);
+        }
+        
+        assertTrue(this.calc5.getFirst() < 250);
+        assertTrue(this.calc5.getSecond() < 250);
+        
+        if (this.calc5.getOperator() == '·') {
+            assertTrue(this.calc5.getFirst() < 50);
+            assertTrue(this.calc5.getSecond() < 50);
+        }
+    }
     
 }

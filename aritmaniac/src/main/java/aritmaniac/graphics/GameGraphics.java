@@ -43,6 +43,7 @@ public class GameGraphics extends MainGraphics {
         graphics.setFont(new Font("Serif", Font.PLAIN, 20));
         graphics.drawString("[Esc] Cancel game", 30, 460);
         graphics.setColor(green);
+        graphics.drawString("Type your answer and press Enter", 430, 460);
         graphics.setFont(f2);
         graphics.drawString(game.getLevelUp(), 450, 50);
         graphics.setColor(white);       
@@ -65,7 +66,7 @@ public class GameGraphics extends MainGraphics {
     }
     
     /**
-     * Keylistener and timerlistener refresh the game view to keep the time running and new questions coming on the screen.
+     * KeyListener and timerListener refresh the game view to keep the time running and new questions coming on the screen.
      * @param game New info about the ongoing game are set
      * @throws IOException exception
      */

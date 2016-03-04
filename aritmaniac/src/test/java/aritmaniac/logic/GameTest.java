@@ -23,6 +23,7 @@ public class GameTest {
     
     /**
      *
+     * @throws java.io.IOException
      */
     public GameTest() throws IOException {
         this.game = new Game("Matt");
@@ -101,5 +102,29 @@ public class GameTest {
 
         assertEquals("5", game.getPoints());
     }
+    
+    @Test
+    public void getPlayerTest() {
+        assertEquals("Matt", game.getPlayer());
+    }
+    
+    @Test
+    public void levelTest() {
+        assertEquals(1, game.getLevel());
+        game.setPoints();
+        assertEquals(1, game.getLevel());
+        game.setPoints();
+        game.setPoints();
+        game.setPoints();
+        game.setPoints();
+        assertEquals(2, game.getLevel());
+    }
+    
+    @Test
+    public void testCalc() {
+        assertEquals(1, game.getLevel());
+        assertTrue(game.getCalc().charAt(2) == '+' || game.getCalc().charAt(2) == '-');
+    }
+    
     
 }

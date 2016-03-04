@@ -30,34 +30,33 @@ public class Operator {
      * Creates operator based on current level.
      * @param level Current level
      */
-    private void createOperator(int level) {
-        if (level == 1) {
+    private void createOperator(int leve) {
+        if (leve == 1) {
             operatorNumb = (int) (Math.random() * 2);
+            System.out.println(operatorNumb);
             if (operatorNumb == 0) {
-                operator = '+';
+                this.operator = '+';
             } else {
-                operator = '-';
+                this.operator = '-';
             }
-        }
-        if (level == 2) {
+        } else if (leve == 2) {
             operatorNumb = (int) (Math.random() * 10);
             switch (operatorNumb) {
                 case 0:
                 case 1:
                 case 2:
-                    operator = '+';
+                    this.operator = '+';
                     break;
                 case 3:
                 case 4:
                 case 5:
-                    operator = '-';
+                    this.operator = '-';
                     break;
                 default:
-                    operator = '·';
+                    this.operator = '·';
                     break;
             }
-        }
-        if (level == 3) {
+        } else if (leve == 3) {
             operatorNumb = (int) (Math.random() * 10);
             switch (operatorNumb) {
                 case 0:
@@ -77,8 +76,7 @@ public class Operator {
                     operator = '/';
                     break;
             }
-        }
-        if (level == 4) {
+        } else if (leve == 4) {
             operatorNumb = (int) (Math.random() * 10);
             switch (operatorNumb) {
                 case 0:

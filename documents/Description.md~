@@ -12,8 +12,6 @@ level and will need five right answers again to reach a new level. The number of
 answer is same as the current level. The relative share of harder tasks will increase as you reach new levels.
 You can cancel the game by pressing Esc.
 
-Questions are formed so that at the first level there's only + and - tasks with one number integers. Then there's going to be gradually more multiplications and divisions. Multiplications will contain shorter numbers than for example additions.
-
 When the game is over, you will be informed if you've reached the top ten or not. Then you can start a new game by 
 pressing enter or if someone else wants to play, you can press M to go to the menu to give another name. 
 You can also watch the top ten list again or quit. 
